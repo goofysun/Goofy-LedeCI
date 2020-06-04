@@ -40,10 +40,9 @@ jobs:
     - name: Download and Load custom configuration
       run: |
         cd lede
-        cp ../diy.sh ./diy.sh
+        mv ../diy.sh diy.sh
         chmod +x diy.sh
         ./diy.sh
-        ./scripts/feeds install -a
         mv ../x86_64.config .config
         make defconfig
         
