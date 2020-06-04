@@ -120,3 +120,6 @@ jobs:
         pattern: "${{ env.FIRMWARE }}/*"
         github-token: ${{ secrets.REPO_TOKEN }}
         release-url: ${{ steps.create_release.outputs.upload_url }}
+    - name: WeChat notification
+      run: |
+        [ ${{ env.status }} == 'success' ] && curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=🎉OpenWrt_${{ env.date3 }}_x86_64编译完成😋 || curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=❌OpenWrt_${{ env.date3 }}__x86_64编译失败😂
