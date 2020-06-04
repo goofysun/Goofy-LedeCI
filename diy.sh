@@ -34,3 +34,4 @@ cd ../../
 
 #\cp -rf ../lede/zzz-default-settings package/lean/default-settings/files/zzz-default-settings
 mv ../zzz-default-settings > package/lean/default-settings/files/zzz-default-settings
+./scripts/feeds install -a
