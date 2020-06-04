@@ -33,4 +33,4 @@ cd ../../
 # Add some default settings
 
 #\cp -rf ../lede/zzz-default-settings package/lean/default-settings/files/zzz-default-settings
-curl -fsSL https://raw.githubusercontent.com/goofysun/My-action/master/lean-lede/zzz-default-settings > package/lean/default-settings/files/zzz-default-settings
+mv ../zzz-default-settings > package/lean/default-settings/files/zzz-default-settings
