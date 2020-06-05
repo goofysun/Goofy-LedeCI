@@ -1,14 +1,14 @@
-name: Build-Lean-lede
+name: Build-Lean-sub
 on:
   push:
     branches:
       - master
-     paths:
-       - '.github/workflows/build-openwrt.yml'
-       - '.github/x86_64.config'
-       - '.github/diy2.sh'
+    paths:
+      - '.github/workflows/build-openwrt.yml'
+      - '.github/x86_64.config'
+      - '.github/diy2.sh'
   schedule:
-        - cron: 0 */12 * * *
+    - cron: 0 */12 * * *
 
 jobs:
   x86:
@@ -31,14 +31,14 @@ jobs:
         sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
     - name: Checkout
       uses: actions/checkout@master    
+    
+    
     - name: Clone source and install
       run: |
         git clone https://github.com/coolsnowwolf/lede
         cd lede
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        
-        
         
     - name: Generate configuration file
       run: |
