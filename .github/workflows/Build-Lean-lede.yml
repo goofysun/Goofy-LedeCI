@@ -41,6 +41,7 @@ jobs:
         
     - name: Generate configuration file
       run: |
+        cd lede
         rm -f ./.config*
         touch ./.config
         #
