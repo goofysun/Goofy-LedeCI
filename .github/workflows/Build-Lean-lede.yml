@@ -201,7 +201,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: LEDE-x86_64-bin-dictionary
+        name: ${{ env.date3 }}_LEDE-x86_64-bin-dictionary
         path: lede/bin
         
     - name: Setup Upload dictionary
@@ -215,7 +215,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: x86_64
+        name: ${{ env.date3 }}_x86_64
         path: ${{ env.FIRMWARE }}
     
     - name: Create release
