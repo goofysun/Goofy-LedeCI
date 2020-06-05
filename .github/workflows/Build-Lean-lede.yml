@@ -3,9 +3,10 @@ on:
   push:
     branches:
       - master
-#     paths:
-#       - '.github/workflows/Build-Lean-lede.yml'
-#       - '.github/lean-lede/x86_64/.config'
+    paths:
+      - '.github/workflows/Build-Lean-lede.yml'
+      - '.github/lean-lede/x86_64/.config'
+      - '.github/lean-lede/diy.sh'
   schedule:
         - cron: 0 */4 * * *
 
