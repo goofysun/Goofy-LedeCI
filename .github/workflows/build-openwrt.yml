@@ -1,0 +1,244 @@
+name: Build-Lean-lede
+on:
+  push:
+    branches:
+      - master
+     paths:
+       - '.github/workflows/build-openwrt.yml'
+       - '.github/x86_64.config'
+       - '.github/diy2.sh'
+  schedule:
+        - cron: 0 */12 * * *
+
+jobs:
+  x86:
+    runs-on: ubuntu-latest
+    steps:    
+    - name: Prepare environment.
+      env:
+          DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo swapoff /swapfile
+        sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
+        docker rmi `docker images -q`
+        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
+        sudo -E apt-get -qq update
+        sudo -E apt-get -qq install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs gcc-multilib g++-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler antlr3 gperf
+        sudo -E apt-get -qq autoremove --purge
+        sudo -E apt-get -qq clean
+        sudo df -h
+        curl -fsSL https://raw.githubusercontent.com/goofysun/My-action/master/.bashrc >> ~/.bashrc
+        sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+    - name: Checkout
+      uses: actions/checkout@master    
+    - name: Clone source and install
+      run: |
+        git clone https://github.com/coolsnowwolf/lede
+        cd lede
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        
+        
+        
+    - name: Generate configuration file
+      run: |
+        cd lede
+        rm -f ./.config*
+        touch ./.config
+        #
+        # 编译x64固件:
+        #
+        cat >> .config <<EOF
+        CONFIG_HAS_SUBTARGETS=y
+        CONFIG_TARGET_BOARD="x86"
+        CONFIG_TARGET_SUBTARGET="64"
+        CONFIG_TARGET_PROFILE="Generic"
+        CONFIG_TARGET_ARCH_PACKAGES="x86_64"
+        CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe"
+        CONFIG_CPU_TYPE=" "
+        CONFIG_LINUX_4_19=y
+        EOF
+        # 固件压缩:
+        cat >> .config <<EOF
+        CONFIG_TARGET_IMAGES_GZIP=y
+        EOF
+        # 编译UEFI固件:
+        cat >> .config <<EOF
+        CONFIG_EFI_IMAGES=y
+        EOF
+        # IPv6支持:
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+        CONFIG_PACKAGE_ipv6helper=y
+        EOF
+        #  多文件系统支持:
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_kmod-fs-nfs=y
+        CONFIG_PACKAGE_kmod-fs-nfs-common=y
+        CONFIG_PACKAGE_kmod-fs-nfs-v3=y
+        CONFIG_PACKAGE_kmod-fs-nfs-v4=y
+        CONFIG_PACKAGE_kmod-fs-ntfs=y
+        CONFIG_PACKAGE_kmod-fs-squashfs=y
+        EOF
+        #  USB3.0支持:
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_kmod-usb-ohci=y
+        CONFIG_PACKAGE_kmod-usb-ohci-pci=y
+        CONFIG_PACKAGE_kmod-usb2=y
+        CONFIG_PACKAGE_kmod-usb2-pci=y
+        CONFIG_PACKAGE_kmod-usb3=y
+        EOF
+        #  常用LuCI插件选择:
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_luci-app-baidupcs-web=y
+        CONFIG_PACKAGE_luci-app-docker-dockerman=y
+        CONFIG_PACKAGE_luci-app-kodexplorer=y
+        CONFIG_PACKAGE_luci-app-minidlna=y
+        CONFIG_PACKAGE_luci-app-ssr-plus=y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+        CONFIG_PACKAGE_luci-app-ttyd=y
+        CONFIG_PACKAGE_luci-app-v2ray-server=y
+        CONFIG_PACKAGE_luci-app-webadmin=y
+        CONFIG_PACKAGE_luci-app-wireguard=y
+        CONFIG_PACKAGE_luci-app-wrtbwmon=y
+        CONFIG_PACKAGE_luci-app-adguardhome=y
+        CONFIG_PACKAGE_luci-app-advancedsetting=y
+        CONFIG_PACKAGE_luci-app-aliddns=y
+        CONFIG_PACKAGE_luci-app-diskman=y
+        CONFIG_PACKAGE_luci-app-diskman_INCLUDE_btrfs_progs=y
+        CONFIG_PACKAGE_luci-app-diskman_INCLUDE_lsblk=y
+        CONFIG_PACKAGE_luci-app-diskman_INCLUDE_mdadm=y
+        CONFIG_PACKAGE_luci-app-diskman_INCLUDE_kmod_md_raid456=y
+        CONFIG_PACKAGE_luci-app-diskman_INCLUDE_kmod_md_linear=y
+        CONFIG_PACKAGE_luci-app-filebrowser=y
+        CONFIG_PACKAGE_luci-app-filetransfer=y
+        CONFIG_PACKAGE_luci-app-firewall=y
+        CONFIG_PACKAGE_luci-app-flowoffload=y
+        CONFIG_PACKAGE_luci-i18n-ipsec-vpnserver-manyusers-zh-cn=y
+        CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=y
+        EOF
+        #  LuCI主题:
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_luci-theme-argon=y
+        # CONFIG_PACKAGE_luci-theme-argon-dark-mod is not set
+        # CONFIG_PACKAGE_luci-theme-argon-dark-new is not set
+        # CONFIG_PACKAGE_luci-theme-argon-light-mod is not set
+        CONFIG_PACKAGE_luci-theme-argon_new=y
+        CONFIG_PACKAGE_luci-theme-atmaterial=y
+        CONFIG_PACKAGE_luci-theme-bootstrap=y
+        # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
+        CONFIG_PACKAGE_luci-theme-material=y
+        # CONFIG_PACKAGE_luci-theme-netgear is not set
+        # CONFIG_PACKAGE_luci-theme-opentomato is not set
+        # CONFIG_PACKAGE_luci-theme-opentomcat is not set
+        CONFIG_PACKAGE_luci-theme-netgear=y
+        EOF
+        #  常用软件包:
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_curl=y
+        CONFIG_PACKAGE_htop=y
+        CONFIG_PACKAGE_nano=y
+        CONFIG_PACKAGE_screen=y
+        CONFIG_PACKAGE_tree=y
+        CONFIG_PACKAGE_vim-fuller=y
+        CONFIG_PACKAGE_wget=y
+        EOF
+        #  取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
+        cat >> .config <<EOF
+        # CONFIG_TARGET_IMAGES_PAD is not set
+        # CONFIG_VMDK_IMAGES is not set
+        EOF
+        #  ========================固件定制部分结束========================
+        
+        sed -i 's/^[ \t]*//g' ./.config
+    - name: Download and Load custom configuration
+      run: |
+        cd lede
+        mv ../diy2.sh diy.sh
+        chmod +x diy.sh
+        ./diy.sh
+        #mv ../x86_64.config .config
+        make defconfig
+        
+    - name: Download package
+      run: |
+        cd lede
+        make download -j8
+        find dl -size -1024c -exec ls -l {} \;
+        find dl -size -1024c -exec rm -f {} \;
+        sudo df -h
+        
+    - name: Multi-core compile
+      run: |
+        cd lede
+        sudo df -h
+        echo -e "$(nproc) thread compile"
+        
+        make -j$(nproc)
+        sudo df -h
+        
+    - name: Single-core compile
+      if: failure()
+      run: |
+        sudo df -h
+        cd lede
+        make -j1 V=s
+        sudo df -h
+    - name: Get current date
+      id: date
+      run: |
+        echo "::set-env name=date::$(date +'%m/%d_%Y_%H/%M')"
+        echo "::set-env name=date2::$(date +'%m/%d %Y')"
+        echo "::set-env name=date3::$(date +'%m.%d')"   
+    - name: Upload entire bin directory
+      uses: actions/upload-artifact@master
+      if: always()
+      with:
+        name: LEDE-x86_64-bin-dictionary
+        path: lede/bin
+        
+    - name: Setup Upload dictionary
+      if: always()
+      run: |
+        cd lede/bin/targets/*/*
+        rm -rf packages
+        echo "::set-env name=FIRMWARE::$(pwd)"
+        
+    - name: Only Upload firmware (Without packages)
+      uses: actions/upload-artifact@master
+      if: always()
+      with:
+        name: x86_64
+        path: ${{ env.FIRMWARE }}
+    
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@master
+      continue-on-error: true
+      if: env.REPO_TOKEN
+      env:
+        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
+      with:
+        tag_name: ${{ env.date }}_x86_64
+        release_name: ${{ env.date2 }} _x86_64
+        body: |
+            请分配不低于1G 的内存和存储空间 💾
+        draft: false
+        prerelease: false     
+
+    - name: Upload firmware for release
+      uses: csexton/release-asset-action@master
+      continue-on-error: true
+      if: env.REPO_TOKEN
+      with:
+        pattern: "${{ env.FIRMWARE }}/*"
+        github-token: ${{ secrets.REPO_TOKEN }}
+        release-url: ${{ steps.create_release.outputs.upload_url }}
+    - name: WeChat notification
+      run: |
+        [ ${{ env.status }} == 'success' ] && curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=🎉OpenWrt_${{ env.date3 }}_x86_64编译完成😋 || curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=❌OpenWrt_${{ env.date3 }}__x86_64编译失败😂
