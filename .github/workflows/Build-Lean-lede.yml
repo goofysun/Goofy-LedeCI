@@ -163,7 +163,7 @@ jobs:
         mv ../diy.sh diy.sh
         chmod +x diy.sh
         ./diy.sh
-        mv ../x86_64.config .config
+        #mv ../x86_64.config .config
         make defconfig
         
     - name: Download package
