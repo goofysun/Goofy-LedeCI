@@ -200,7 +200,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: ${{ env.date }}_LEDE-x86_64-bin-dictionary
+        name: ${{ env.date3 }}_LEDE-x86_64-bin-dictionary
         path: lede/bin
         
     - name: Setup Upload dictionary
@@ -214,14 +214,14 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: ${{ env.date }}_x86_64
+        name: ${{ env.date3 }}_x86_64
         path: ${{ env.FIRMWARE }}
     
     - name: Create release
       id: create_release
       uses: actions/create-release@master
       continue-on-error: true
-      if: env.REPO_TOKEN && env.UPLOAD_FIRMWARE_FOR_RELEASE == 'true'
+      if: env.REPO_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
