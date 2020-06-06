@@ -220,7 +220,7 @@ jobs:
       id: create_release
       uses: actions/create-release@master
       continue-on-error: true
-      if: env.REPO_TOKEN
+      if: secrets.REPO_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
@@ -234,7 +234,7 @@ jobs:
     - name: Upload firmware for release
       uses: csexton/release-asset-action@master
       continue-on-error: true
-      if: env.REPO_TOKEN
+      if: secrets.REPO_TOKEN
       with:
         pattern: "${{ env.FIRMWARE }}/*"
         github-token: ${{ secrets.REPO_TOKEN }}
