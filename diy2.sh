@@ -10,7 +10,8 @@ svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
 git clone https://github.com/jerrykuku/luci-theme-argon
 svn co https://github.com/openwrt/luci/trunk/applications/luci-app-acme
-git clone https://github.com/pymumu/luci-app-smartdns -b lede
+git clone https://github.com/pymumu/luci-app-smartdns
+git clone https://github.com/goofysun/smartdns
 git clone https://github.com/lisaac/luci-app-diskman
 mkdir parted && cp luci-app-diskman/Parted.Makefile parted/Makefile
 git clone https://github.com/tty228/luci-app-serverchan
@@ -35,6 +36,9 @@ git clone https://github.com/goofysun/luci-app-baidupcs-web
 git clone https://github.com/jerrykuku/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr
 git clone https://github.com/honwen/luci-app-aliddns
+
+rm -rf qt5
+rm -rf qBittorrent
 
 cd ../../
 
