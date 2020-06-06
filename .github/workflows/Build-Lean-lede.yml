@@ -94,10 +94,8 @@ jobs:
         #  常用LuCI插件选择:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-app-baidupcs-web=y
-        CONFIG_PACKAGE_luci-app-docker=y
         CONFIG_PACKAGE_luci-app-kodexplorer=y
         CONFIG_PACKAGE_luci-app-minidlna=y
-        CONFIG_PACKAGE_luci-app-qbittorrent=y
         CONFIG_PACKAGE_luci-app-ssr-plus=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
@@ -126,25 +124,30 @@ jobs:
         CONFIG_PACKAGE_luci-app-flowoffload=y
         CONFIG_PACKAGE_luci-i18n-ipsec-vpnserver-manyusers-zh-cn=y
         CONFIG_PACKAGE_luci-i18n-nfs-zh-cn=y
+        CONFIG_PACKAGE_luci-app-fileassistant=y
+        CONFIG_PACKAGE_luci-app-dockerman=y
+        CONFIG_PACKAGE_luci-app-dockerman_INCLUDE_docker_ce=y
+        CONFIG_PACKAGE_luci-app-dockerman_INCLUDE_ttyd=y
         EOF
         #  LuCI主题:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-theme-argon=y
-        # CONFIG_PACKAGE_luci-theme-argon-dark-mod is not set
-        # CONFIG_PACKAGE_luci-theme-argon-dark-new is not set
-        # CONFIG_PACKAGE_luci-theme-argon-light-mod is not set
         CONFIG_PACKAGE_luci-theme-argon_new=y
         CONFIG_PACKAGE_luci-theme-atmaterial=y
         CONFIG_PACKAGE_luci-theme-bootstrap=y
-        # CONFIG_PACKAGE_luci-theme-bootstrap-mod is not set
         CONFIG_PACKAGE_luci-theme-material=y
-        # CONFIG_PACKAGE_luci-theme-netgear is not set
-        # CONFIG_PACKAGE_luci-theme-opentomato is not set
-        # CONFIG_PACKAGE_luci-theme-opentomcat is not set
         CONFIG_PACKAGE_luci-theme-netgear=y
+        CONFIG_LUCI_LANG_zh_Hans=y
+        CONFIG_LUCI_LANG_en=y
+        
         EOF
         #  常用软件包:
         cat >> .config <<EOF
+        CONFIG_PACKAGE_luci=y
+        CONFIG_PACKAGE_luci-base=y
+        CONFIG_PACKAGE_luci-compat=y
+        CONFIG_PACKAGE_luci-lib-ipkg=y
+        CONFIG_PACKAGE_luci-proto-ppp=y
         CONFIG_PACKAGE_curl=y
         CONFIG_PACKAGE_htop=y
         CONFIG_PACKAGE_nano=y
@@ -152,6 +155,26 @@ jobs:
         CONFIG_PACKAGE_tree=y
         CONFIG_PACKAGE_vim-fuller=y
         CONFIG_PACKAGE_wget=y
+        CONFIG_PACKAGE_adguardhome=y
+        CONFIG_PACKAGE_kmod-vmxnet3=y
+        CONFIG_PACKAGE_kmod-igbvf=y
+        CONFIG_PACKAGE_kmod-ixgbe=y
+        CONFIG_PACKAGE_kmod-pcnet32=y
+        CONFIG_PACKAGE_kmod-r8125=y
+        CONFIG_PACKAGE_kmod-8139cp=y
+        CONFIG_PACKAGE_kmod-8139too=y
+        CONFIG_PACKAGE_kmod-i40e=y
+        CONFIG_PACKAGE_kmod-i40evf=y
+        CONFIG_PACKAGE_kmod-usb-net=y
+        CONFIG_PACKAGE_kmod-usb-net-rtl8150=y
+        CONFIG_PACKAGE_kmod-usb-net-rtl8152=y
+        CONFIG_PACKAGE_kmod-usb-net-asix-ax88179=y
+        CONFIG_PACKAGE_kmod-sound-core=y
+        CONFIG_PACKAGE_kmod-usb-audio=y
+        CONFIG_PACKAGE_kmod-macvlan=y
+        CONFIG_PACKAGE_unzip=y
+        CONFIG_PACKAGE_bash=y
+        
         EOF
         #  取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
         cat >> .config <<EOF
