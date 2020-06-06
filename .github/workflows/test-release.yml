@@ -32,9 +32,10 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
     - name: Checkout
       uses: actions/checkout@master    
-       run: |
+
+    - name: set File
+      run: |
         echo "::set-env name=FIRMWARE::$(pwd)"
-   
     - name: Create release
       id: create_release
       uses: actions/create-release@master
