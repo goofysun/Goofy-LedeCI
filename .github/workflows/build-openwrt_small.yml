@@ -38,7 +38,7 @@ jobs:
     
     - name: Clone source and install
       run: |
-        git clone https://github.com/coolsnowwolf/lede
+        git clone --depth 1 https://github.com/coolsnowwolf/lede
         cd lede
         ./scripts/feeds update -a
                 
