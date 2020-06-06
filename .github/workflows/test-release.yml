@@ -1,4 +1,4 @@
-name: Build-Lean-lede
+name: Test Release
 on:
   push:
     branches:
