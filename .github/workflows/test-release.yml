@@ -4,9 +4,7 @@ on:
     branches:
       - master
     paths:
-      - '.github/workflows/Build-Lean-lede.yml'
-      - '.github/lean-lede/x86_64/.config'
-      - '.github/lean-lede/diy.sh'
+      - '.github/workflows/test-release'
   schedule:
         - cron: 0 */4 * * *
 env:
