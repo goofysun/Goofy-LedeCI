@@ -41,8 +41,7 @@ jobs:
         git clone https://github.com/coolsnowwolf/lede
         cd lede
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        
+                
     - name: Download and Load custom configuration
       run: |
         cd lede
