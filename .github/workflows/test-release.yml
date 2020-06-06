@@ -4,7 +4,7 @@ on:
     branches:
       - master
     paths:
-      - '.github/workflows/test-release'
+      - '.github/workflows/test-release.yml'
   schedule:
         - cron: 0 */4 * * *
 env:
