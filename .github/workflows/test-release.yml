@@ -5,8 +5,8 @@ on:
       - master
     paths:
       - '.github/workflows/test-release.yml'
-  schedule:
-        - cron: 0 */4 * * *
+#   schedule:
+#         - cron: 0 */4 * * *
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   TZ: Asia/Shanghai
