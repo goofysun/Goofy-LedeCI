@@ -32,6 +32,10 @@ git clone https://github.com/goofysun/openwrt-adguardhome
 git clone https://github.com/goofysun/luci-app-eqos
 git clone https://github.com/goofysun/luci-app-baidupcs-web
 
+git clone https://github.com/jerrykuku/lua-maxminddb
+git clone https://github.com/jerrykuku/luci-app-vssr
+git clone https://github.com/honwen/luci-app-aliddns
+
 cd ../../
 
 # Add some default settings
