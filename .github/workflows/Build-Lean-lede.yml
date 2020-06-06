@@ -9,6 +9,9 @@ on:
       - '.github/lean-lede/diy.sh'
   schedule:
         - cron: 0 */4 * * *
+env:
+  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  TZ: Asia/Shanghai
 
 jobs:
   x86:
@@ -28,7 +31,7 @@ jobs:
         sudo -E apt-get -qq clean
         sudo df -h
         curl -fsSL https://raw.githubusercontent.com/goofysun/My-action/master/.bashrc >> ~/.bashrc
-        sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+        sudo timedatectl set-timezone "$TZ"
     - name: Checkout
       uses: actions/checkout@master    
     - name: Clone source and install
@@ -244,4 +247,4 @@ jobs:
         release-url: ${{ steps.create_release.outputs.upload_url }}
     - name: WeChat notification
       run: |
-        [ ${{ env.status }} == 'success' ] && curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=🎉OpenWrt_${{ env.date3 }}_x86_64编译完成😋 || curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=❌OpenWrt_${{ env.date3 }}__x86_64编译失败😂
+        [ ${{ env.status }} == 'success' ] && curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=🎉Lede_${{ env.date3 }}_x86_64编译完成😋 || curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=❌Lede_${{ env.date3 }}__x86_64编译失败😂
