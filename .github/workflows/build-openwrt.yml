@@ -10,6 +10,10 @@ on:
   schedule:
     - cron: 0 */12 * * *
 
+env:
+  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+  TZ: Asia/Shanghai
+
 jobs:
   x86:
     runs-on: ubuntu-latest
@@ -28,10 +32,9 @@ jobs:
         sudo -E apt-get -qq clean
         sudo df -h
         curl -fsSL https://raw.githubusercontent.com/goofysun/My-action/master/.bashrc >> ~/.bashrc
-        sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+        sudo timedatectl set-timezone "$TZ"
     - name: Checkout
       uses: actions/checkout@master    
-    
     
     - name: Clone source and install
       run: |
@@ -220,7 +223,7 @@ jobs:
       id: create_release
       uses: actions/create-release@master
       continue-on-error: true
-      if: secrets.REPO_TOKEN
+      if: env.REPO_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
@@ -234,7 +237,7 @@ jobs:
     - name: Upload firmware for release
       uses: csexton/release-asset-action@master
       continue-on-error: true
-      if: secrets.REPO_TOKEN
+      if: env.REPO_TOKEN
       with:
         pattern: "${{ env.FIRMWARE }}/*"
         github-token: ${{ secrets.REPO_TOKEN }}
