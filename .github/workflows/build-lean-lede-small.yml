@@ -14,7 +14,7 @@ on:
       - master
     paths:
       - '.github/workflows/build-lean-lede-small.yml'
-      - '.github/x86_64.config'
+      - '.github/x86_64_small.config'
       - '.github/diy2.sh'
   schedule:
     - cron: 0 */12 * * *
