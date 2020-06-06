@@ -4,8 +4,8 @@
 
 # Add Some Package
 
-mkdir -p package/custom
-cd package/custom
+#mkdir -p package/custom
+cd package/lean
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
 git clone https://github.com/jerrykuku/luci-theme-argon
@@ -24,7 +24,7 @@ git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall
 svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
-svn co https://github.com/Lienol/openwrt-package/trunk/package/brook
+
 svn co https://github.com/vernesong/OpenClash/branches/master/luci-app-openclash
 svn co https://github.com/Lienol/openwrt-package/trunk/package/ipt2socks
 svn co https://github.com/solidus1983/luci-theme-opentomato/trunk/luci/themes/luci-theme-opentomato
