@@ -1,4 +1,4 @@
-name: Build-Lean-sub
+name: Build-Lean-精简版
 on:
   push:
     branches:
