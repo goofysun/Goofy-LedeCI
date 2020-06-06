@@ -202,7 +202,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: LEDE-x86_64-bin-dictionary
+        name: ${{ env.date3 }}_精简版本_LEDE-x86_64-bin-dictionary
         path: lede/bin
         
     - name: Setup Upload dictionary
@@ -216,7 +216,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: x86_64
+        name: ${{ env.date3 }}_x86_64_精简版本
         path: ${{ env.FIRMWARE }}
     
     - name: Create release
@@ -227,8 +227,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
-        tag_name: ${{ env.date }}_x86_64
-        release_name: ${{ env.date2 }} _x86_64
+        tag_name: ${{ env.date }}_x86_64_精简版本
+        release_name: ${{ env.date2 }} _x86_64_精简版本
         body: |
             请分配不低于1G 的内存和存储空间 💾
         draft: false
