@@ -1,4 +1,13 @@
-name: Build-Lean-精简版
+#=================================================
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
+# Author: P3TERX
+# Blog: https://p3terx.com
+#=================================================
+
+
+name: Build Lean small
 on:
   push:
     branches:
