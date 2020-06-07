@@ -111,6 +111,17 @@ jobs:
         name: ${{ env.date3 }}_x86_64_精简版本
         path: ${{ env.FIRMWARE }}
     
+    
+    - name: Upload firmware to cowtransfer
+      if: env.UPLOAD_FIRMWARE_TO_COWTRANSFER == 'true'
+      continue-on-error: true
+      run: |
+        curl -fsSL git.io/file-transfer | sh
+        cowurl=$(./transfer cow --block 2621440 -s --no-progress ${FIRMWARE})
+        cowurl=$(echo $cowurl | grep -o -E "https[^ ]*")
+        echo "::set-env name=COWURL::$cowurl"
+        echo "Download Link: ${{ env.EMOJI }} $cowurl ${{ env.EMOJI }} 🚀"
+    
     - name: Create release
       id: create_release
       uses: actions/create-release@master
@@ -122,7 +133,9 @@ jobs:
         tag_name: ${{ env.date }}_x86_64_精简版本
         release_name: ${{ env.date2 }} _x86_64_精简版本
         body: |
-            请分配不低于1G 的内存和存储空间 💾
+            墙内加速下载🔥:
+            奶牛快传: ${{ env.COWURL }} 🚀
+            请分配不低于500m 的内存和存储空间 💾
         draft: false
         prerelease: false     
 
