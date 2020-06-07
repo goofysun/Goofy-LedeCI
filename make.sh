@@ -11,7 +11,7 @@ sudo -E apt-get -qq clean
 sudo df -h
 curl -fsSL https://github.com/goofysun/Goofy-LedeCI/blob/master/.bashrc >> ~/.bashrc
 sudo timedatectl set-timezone "Asia/Shanghai"   
-git clone --depth 1 https://github.com/coolsnowwolf/lede
+git clone  https://github.com/coolsnowwolf/lede
 cd lede
 ./scripts/feeds update -a
 mv ../diy2.sh diy.sh
