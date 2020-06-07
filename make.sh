@@ -10,7 +10,7 @@ sudo -E apt-get -qq autoremove --purge
 sudo -E apt-get -qq clean
 sudo df -h
 curl -fsSL https://github.com/goofysun/Goofy-LedeCI/blob/master/.bashrc >> ~/.bashrc
-sudo timedatectl set-timezone "$TZ"   
+sudo timedatectl set-timezone "Asia/Shanghai"   
 git clone --depth 1 https://github.com/coolsnowwolf/lede
 cd lede
 ./scripts/feeds update -a
