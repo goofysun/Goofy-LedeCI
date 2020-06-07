@@ -12,6 +12,7 @@ git clone https://github.com/goofysun/r8125
 git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
 git clone https://github.com/goofysun/luci-app-baidupcs-web
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
+git clone https://github.com/goofysun/openwrt-adguardhome
 git clone https://github.com/honwen/luci-app-aliddns
 git clone https://github.com/jerrykuku/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr.git
@@ -21,6 +22,7 @@ cd ../../
 mv ../zzz-default-settings  package/lean/default-settings/files/zzz-default-settings
 ./scripts/feeds install -a
 rm -rf package/feeds/kenzo/luci-app-adguardhome
+rm -rf package/feeds/kenzo/adguardhome
 rm -rf package/feeds/kenzo/luci-app-aliddns
 
 
