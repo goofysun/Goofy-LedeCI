@@ -17,7 +17,7 @@ on:
       - 'x86_64_small.config'
       - 'diy2.sh'
   schedule:
-    - cron: 0 */12 * * *
+    - cron: 0 */24 * * *
 
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
