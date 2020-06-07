@@ -5,10 +5,10 @@ on:
       - master
     paths:
       - '.github/workflows/Build-Lean-lede.yml'
-      - 'x86_64/.config'
+      - 'x86_64.config'
       - 'diy.sh'
   schedule:
-        - cron: 0 */12 * * *
+        - cron: 0 */24 * * *
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   TZ: Asia/Shanghai
