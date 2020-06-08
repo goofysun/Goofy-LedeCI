@@ -28,7 +28,7 @@ git clone https://github.com/pymumu/luci-app-smartdns
 cd ../../
 
 # Add some default settings
-mv ../zzz-default-settings  package/lean/default-settings/files/zzz-default-settings
+cp -rf ../zzz-default-settings  package/lean/default-settings/files/zzz-default-settings
 ./scripts/feeds install -a
 # rm -rf package/feeds/kenzo/luci-app-adguardhome
 # rm -rf package/feeds/kenzo/adguardhome
