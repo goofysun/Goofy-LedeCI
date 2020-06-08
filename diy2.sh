@@ -3,9 +3,12 @@
 # 本脚本工作目录必须是git仓库的主目录
 
 cd package/lean/
+#删除会被替换或者占用安装资源的包
 rm -rf luci-theme-argon
 rm -rf luci-app-diskman
 rm -rf luci-app-wrtbwmon
+rm -rf qBittorrent
+rm -rf qt5
 svn co https://github.com/openwrt/luci/trunk/applications/luci-app-acme
 git clone https://github.com/lisaac/luci-app-diskman
 git clone https://github.com/brvphoenix/luci-app-wrtbwmon
