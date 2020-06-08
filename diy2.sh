@@ -9,6 +9,7 @@ rm -rf luci-app-diskman
 rm -rf luci-app-wrtbwmon
 rm -rf qBittorrent
 rm -rf qt5
+rm -rf rblibtorrent
 svn co https://github.com/openwrt/luci/trunk/applications/luci-app-acme
 git clone https://github.com/lisaac/luci-app-diskman
 git clone https://github.com/brvphoenix/luci-app-wrtbwmon
