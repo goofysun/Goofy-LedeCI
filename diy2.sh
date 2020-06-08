@@ -24,6 +24,7 @@ git clone https://github.com/honwen/luci-app-aliddns
 git clone https://github.com/jerrykuku/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr
 git clone https://github.com/jerrykuku/luci-theme-argon
+git clone https://github.com/pymumu/luci-app-smartdns
 cd ../../
 
 # Add some default settings
