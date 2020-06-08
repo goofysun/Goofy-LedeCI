@@ -8,6 +8,7 @@ rm -rf luci-theme-argon
 rm -rf luci-app-diskman
 rm -rf luci-app-wrtbwmon
 rm -rf qBittorrent
+rm -rf luci-app-qbittorrent
 rm -rf qt5
 rm -rf rblibtorrent
 svn co https://github.com/openwrt/luci/trunk/applications/luci-app-acme
@@ -24,7 +25,7 @@ git clone https://github.com/honwen/luci-app-aliddns
 git clone https://github.com/jerrykuku/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr
 git clone https://github.com/jerrykuku/luci-theme-argon
-git clone https://github.com/pymumu/luci-app-smartdns
+git clone https://github.com/pymumu/luci-app-smartdns -b lede
 cd ../../
 
 # Add some default settings
