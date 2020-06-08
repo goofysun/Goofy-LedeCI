@@ -4,6 +4,8 @@
 
 cd package/lean/
 rm -rf luci-theme-argon
+rm -rf luci-app-diskman
+rm -rf luci-app-wrtbwmon
 svn co https://github.com/openwrt/luci/trunk/applications/luci-app-acme
 git clone https://github.com/lisaac/luci-app-diskman
 git clone https://github.com/brvphoenix/luci-app-wrtbwmon
@@ -23,6 +25,6 @@ cd ../../
 # Add some default settings
 mv ../zzz-default-settings  package/lean/default-settings/files/zzz-default-settings
 ./scripts/feeds install -a
-rm -rf package/feeds/kenzo/luci-app-adguardhome
-rm -rf package/feeds/kenzo/adguardhome
-rm -rf package/feeds/kenzo/luci-app-aliddns
+# rm -rf package/feeds/kenzo/luci-app-adguardhome
+# rm -rf package/feeds/kenzo/adguardhome
+# rm -rf package/feeds/kenzo/luci-app-aliddns
