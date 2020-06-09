@@ -11,6 +11,7 @@ sudo timedatectl set-timezone "Asia/Shanghai"
 if [ -d "lede" ];then
   cd lede
   git reset --hard
+  git checkout master
   git pull
 else
   git clone  https://github.com/coolsnowwolf/lede
