@@ -1,3 +1,9 @@
+
+
++![Build Lean small](https://github.com/goofysun/Goofy-LedeCI/workflows/Build%20Lean%20small/badge.svg)
++
++
+
 ## 此编译源码基于 lean大 版本 https://github.com/coolsnowwolf 
 
 ## 全量包 加入 Lienol 和  kenzok8俩位大神维护的软件源
