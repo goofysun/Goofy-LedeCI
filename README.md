@@ -1,6 +1,6 @@
 
 
-+![Build Lean small](https://github.com/goofysun/Goofy-LedeCI/workflows/Build%20Lean%20small/badge.svg)
++ ![Build Lean small](https://github.com/goofysun/Goofy-LedeCI/workflows/Build%20Lean%20small/badge.svg)
 +
 +
 
