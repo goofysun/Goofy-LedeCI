@@ -18,9 +18,159 @@ uci set network.wan.ifname=eth5
 uci set network.wan6.ifname=eth5
 uci commit network
 
+#关闭mwan3
+uci set mwan3.wan.enabled='0'
+uci commit mwan3
+#删除doerman默认配置
+uci del dockerman.local.daemon_ea
+uci commit dockerman
+
+#打开防火墙 fullcone
+uci set firewall.@defaults[0].fullcone='1'
+uci commit firewall
+
+#打开bbr
+uci set flowoffload.@flow[0].bbr='1'
+uci commit flowoffload
+
+#设置ssr 默认 wan口代理配置
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='1.1.1.1'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='208.67.222.222'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='8.8.8.8'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='8.8.4.4'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='9.9.9.9'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='218.102.23.228'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='210.0.255.250'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='168.95.1.1'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='202.175.82.46'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='77.88.8.8'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='101.101.101.101'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='203.198.7.66'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='202.56.128.30'
+uci add_list shadowsocksr.@access_control[0].wan_fw_ips='149.112.112.112'
+uci commit shadowsocksr
+
+#修改 smartdns 默认设置
+uci set smartdns.@smartdns[0].redirect='none'
+uci set smartdns.@smartdns[0].tcp_server='1'
+uci set smartdns.@smartdns[0].prefetch_domain='1'
+uci set smartdns.@smartdns[0].serve_expired='1'
+uci commit smartdns
+
+[ -f "/etc/config/smartdns" ] && {
+cat >> /etc/config/smartdns <<EOF
+config server
+	option name '腾讯'
+	option type 'udp'
+	option enabled '1'
+	option ip '119.29.29.29'
+	option blacklist_ip '1'
+config server
+	option name '阿里'
+	option type 'udp'
+	option enabled '1'
+	option ip '223.5.5.5'
+	option blacklist_ip '1'
+config server
+	option name '114'
+	option type 'tcp'
+	option enabled '1'
+	option ip '114.114.114.114'
+	option blacklist_ip '1'
+config server
+	option name 'Cloudflare'
+	option ip '1.1.1.1'
+	option type 'tls'
+	option enabled '1'
+config server
+	option name 'opendns'
+	option ip '208.67.222.222'
+	option port '5353'
+	option type 'tcp'
+	option enabled '1'
+config server
+	option name 'google'
+	option ip 'dns.google'
+	option type 'tls'
+	option enabled '1'
+config server
+	option name 'IBM'
+	option ip 'dns.quad9.net'
+	option type 'tls'
+	option enabled '1'
+config server
+	option type 'tcp'
+	option enabled '1'
+	option ip '210.0.255.250'
+	option blacklist_ip '0'
+	option name '香港环球全域电讯'
+config server
+	option type 'udp'
+	option name '广州电信'
+	option ip '202.96.128.86'
+	option blacklist_ip '1'
+	option enabled '0'
+config server
+	option name '台湾'
+	option ip '168.95.1.1'
+	option type 'tcp'
+	option enabled '1'
+config server
+	option type 'tcp'
+	option ip '218.102.23.228'
+	option blacklist_ip '0'
+	option name '電訊盈科'
+	option enabled '0'
+config server
+	option name '澳门'
+	option ip '202.175.82.46'
+	option type 'tcp'
+	option enabled '1'
+config server
+	option name '红鱼'
+	option ip 'dns.rubyfish.cn'
+	option type 'tls'
+	option enabled '1'
+	option blacklist_ip '1'
+config server
+	option enabled '1'
+	option name '清华'
+	option ip '101.6.6.6'
+	option port '5353'
+	option type 'tcp'
+config server
+	option enabled '1'
+	option type 'udp'
+	option name '百度'
+	option ip '180.76.76.76'
+	option blacklist_ip '1'
+config server
+	option enabled '1'
+	option name 'Yandex'
+	option ip '77.88.8.8'
+	option type 'tcp'
+config server
+	option enabled '1'
+	option name '台湾 Quad101'
+	option ip '101.101.101.101'
+	option type 'tls'
+config server
+	option enabled '1'
+	option name 'HK网上行'
+	option ip '203.198.7.66'
+	option type 'tcp'
+	option blacklist_ip '1'
+config server
+	option enabled '1'
+	option name '新加坡DNS'
+	option ip '202.56.128.30'
+	option type 'tcp'
+EOF
+}
+
 
 #The default password is "password"
-sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+#sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 
 sed -i "s/# //g" /etc/opkg/distfeeds.conf
 
