@@ -16,9 +16,7 @@ git clone https://github.com/lisaac/luci-app-diskman
 git clone https://github.com/brvphoenix/luci-app-wrtbwmon
 git clone https://github.com/brvphoenix/wrtbwmon
 git clone https://github.com/lisaac/luci-app-dockerman
-git clone https://github.com/goofysun/r8125
 git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
-git clone https://github.com/goofysun/luci-app-baidupcs-web
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
 git clone https://github.com/KFERMercer/openwrt-adguardhome
 git clone https://github.com/honwen/luci-app-aliddns
@@ -26,7 +24,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr
 git clone https://github.com/jerrykuku/luci-theme-argon
 git clone https://github.com/pymumu/openwrt-smartdns
-git clone https://github.com/pymumu/luci-app-smartdns -
+git clone https://github.com/pymumu/luci-app-smartdns -b lede
 cd ../../
 
 # Add some default settings
