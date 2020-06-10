@@ -17,14 +17,26 @@ git clone https://github.com/brvphoenix/luci-app-wrtbwmon
 git clone https://github.com/brvphoenix/wrtbwmon
 git clone https://github.com/lisaac/luci-app-dockerman
 git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
+#adguard home
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
 git clone https://github.com/KFERMercer/openwrt-adguardhome
 git clone https://github.com/honwen/luci-app-aliddns
+#helloworld
 git clone https://github.com/jerrykuku/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr
 git clone https://github.com/jerrykuku/luci-theme-argon
+#smartdns
 git clone https://github.com/pymumu/openwrt-smartdns
 git clone https://github.com/pymumu/luci-app-smartdns -b lede
+#ssr
+svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
+#filemanager
+svn co https://github.com/Lienol/lienol/luci-app-fileassistant/luci-app-fileassistant
+#passwall
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall
+svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping
+git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
+svn co https://github.com/Lienol/openwrt-package/trunk/package/brook
 cd ../../
 
 # Add some default settings
