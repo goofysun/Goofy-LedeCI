@@ -64,10 +64,10 @@ https://github.com/pymumu/luci-app-smartdns lede分支   智能dns管理，不�
  ---
  ## 2、clone 编译脚本,并执行编译（全量包 执行 make.sh ，自用精简版本 使用 make_small.sh）
  
- git clone https://github.com/goofysun/Goofy-LedeCI/
- cd Goofy-LedeCI/
- chmod +x make.sh
- ./make.sh
+- git clone https://github.com/goofysun/Goofy-LedeCI/
+- cd Goofy-LedeCI/
+- chmod +x make.sh
+- ./make.sh
  
  ## 3、自己选择添加插件，建议等 步骤2执行完
 
