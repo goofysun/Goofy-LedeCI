@@ -31,7 +31,7 @@ git clone https://github.com/pymumu/luci-app-smartdns -b lede
 #ssr
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
 #filemanager
-svn co https://github.com/Lienol/lienol/luci-app-fileassistant/luci-app-fileassistant
+svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-fileassistant
 #passwall
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall
 svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping
