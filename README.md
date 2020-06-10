@@ -1,7 +1,7 @@
 
 
-+ ![Build Lean small](https://github.com/goofysun/Goofy-LedeCI/workflows/Build%20Lean%20small/badge.svg)
-+
++ ![Build Lean small](https://github.com/goofysun/Goofy-LedeCI/workflows/Build%20Lean%20small/badge.svg) 精简版自动编译情况
++ ![Build-Lean-lede](https://github.com/goofysun/Goofy-LedeCI/workflows/Build-Lean-lede/badge.svg)       全量版自动编译情况
 +
 
 ## 此编译源码基于 lean大 版本 https://github.com/coolsnowwolf 
