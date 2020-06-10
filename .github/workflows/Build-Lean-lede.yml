@@ -8,7 +8,7 @@ on:
       - 'x86_64.config'
       - 'diy.sh'
   schedule:
-        - cron: 0 */24 * * *
+        - cron: 0 14/24 * * *
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   TZ: Asia/Shanghai
@@ -120,10 +120,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
-        tag_name: ${{ env.date }}_x86_64
-        release_name: ${{ env.date2 }} _x86_64
+        tag_name: ${{ env.date }}_x86_64_全量版
+        release_name: ${{ env.date2 }} _x86_64_全量版
         body: |
-            墙内加速下载🔥:
+            墙内加速下载:全量版本几乎包含所有常用插件，懒人专用，所有插件未设置自动启动
             奶牛快传: ${{ env.COWURL }} 🐕
             请分配不低于500M 的内存和存储空间 
         draft: false
