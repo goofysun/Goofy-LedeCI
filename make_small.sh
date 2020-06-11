@@ -12,6 +12,9 @@ curl -fsSL https://github.com/goofysun/Goofy-LedeCI/blob/master/.bashrc >> ~/.ba
 sudo timedatectl set-timezone "Asia/Shanghai"   
 if [ -d "lede" ];then
   cd lede
+#清理 上次编译的残留插件，方便更新
+  rm -rf package/lean
+  rm -rf package/custom
   git reset --hard
   git checkout master
   git pull
