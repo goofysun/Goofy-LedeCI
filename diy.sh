@@ -20,8 +20,8 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr.git
 git clone https://github.com/honwen/luci-app-aliddns
 svn co https://github.com/jsda/packages2/trunk/ntlf9t/luci-app-advancedsetting
-git clone https://github.com/pymumu/openwrt-smartdns smartdns
-git clone https://github.com/pymumu/luci-app-smartdns -b lede
+#git clone https://github.com/pymumu/openwrt-smartdns smartdns
+#git clone https://github.com/pymumu/luci-app-smartdns -b lede
 
 cd ../../
 # Modify default IP
