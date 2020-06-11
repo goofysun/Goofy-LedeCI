@@ -7,6 +7,7 @@ on:
       - '.github/workflows/Build-Lean-lede.yml'
       - 'x86_64.config'
       - 'diy.sh'
+      - 'zzz-default-settings'
   schedule:
         - cron: 0 14/24 * * *
 env:
