@@ -16,6 +16,7 @@ on:
       - '.github/workflows/build-lean-lede-small.yml'
       - 'x86_64_small.config'
       - 'diy2.sh'
+      - 'zzz-default-settings'
   schedule:
     - cron: 0 */24 * * *
 
