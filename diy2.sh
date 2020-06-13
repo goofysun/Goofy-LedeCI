@@ -37,7 +37,7 @@ svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
 svn co https://github.com/Lienol/openwrt-package/trunk/package/brook
 svn co https://github.com/jsda/packages2/trunk/ntlf9t/luci-app-advancedsetting
-svn co https://github.com/vernesong/OpenClash/branches/master/luci-app-openclash
+svn co https://github.com/vernesong/OpenClash/tags/v0.38.8-beta/luci-app-openclash
 
 cd ../../
 
