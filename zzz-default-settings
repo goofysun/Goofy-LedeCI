@@ -73,7 +73,7 @@ config server
 	option blacklist_ip '1'
 config server
 	option name '114'
-	option type 'tcp'
+	option type 'udp'
 	option enabled '1'
 	option ip '114.114.114.114'
 	option blacklist_ip '1'
