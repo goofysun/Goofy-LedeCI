@@ -95,7 +95,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: ${{ env.date3 }}_精简版本_LEDE-x86_64-bin-dictionary
+        name: ${{ env.date3 }}_small_LEDE-x86_64-bin-dictionary
         path: lede/bin
         
     - name: Setup Upload dictionary
@@ -109,7 +109,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: ${{ env.date3 }}_x86_64_精简版本
+        name: ${{ env.date3 }}_x86_64_small
         path: ${{ env.FIRMWARE }}
     
     
