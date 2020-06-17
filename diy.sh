@@ -4,7 +4,9 @@
 # Add Some Package
 
 mkdir -p package/custom
+rm -rf package/lean/baidupcs-web
 cd package/custom
+git clone https://github.com/garypang13/luci-app-baidupcs-web
 # git clone https://github.com/coolsnowwolf/packages
 git clone https://github.com/kenzok8/small
 git clone https://github.com/kenzok8/openwrt-packages
