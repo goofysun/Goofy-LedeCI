@@ -6,8 +6,8 @@
 mkdir -p package/custom
 #rm -rf package/lean/baidupcs-web
 cd package/custom
-# git https://github.com/KFERMercer/openwrt-baidupcs-web
-# git clone https://github.com/coolsnowwolf/packages
+#git https://github.com/KFERMercer/openwrt-baidupcs-web
+#git clone https://github.com/coolsnowwolf/packages
 git clone https://github.com/kenzok8/small
 git clone https://github.com/kenzok8/openwrt-packages
 git clone https://github.com/Lienol/openwrt-package
