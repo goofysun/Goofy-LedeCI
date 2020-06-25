@@ -9,7 +9,7 @@ on:
       - 'diy.sh'
       - 'zzz-default-settings'
   schedule:
-        - cron: 0 14/24 * * */2
+        - cron: 0 14/24 * * */7
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   TZ: Asia/Shanghai
