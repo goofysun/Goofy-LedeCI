@@ -32,7 +32,7 @@ jobs:
       env:
           DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo swapoff /swapfile
+        #sudo swapoff /swapfile
         sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         docker rmi `docker images -q`
         sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
