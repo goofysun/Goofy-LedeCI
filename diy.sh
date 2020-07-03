@@ -2,7 +2,7 @@
 # 本脚本工作目录必须是git仓库的主目录
 
 # Add Some Package
-
+rm -rf package/custom
 mkdir -p package/custom
 #rm -rf package/lean/baidupcs-web
 cd package/custom
