@@ -11,8 +11,6 @@ rm -rf qBittorrent
 rm -rf luci-app-qbittorrent
 rm -rf qt5
 rm -rf rblibtorrent
-rm -rf baidupcs-web
-git clone https://github.com/KFERMercer/openwrt-baidupcs-web
 git clone https://github.com/lisaac/luci-app-diskman
 git clone https://github.com/brvphoenix/luci-app-wrtbwmon
 git clone https://github.com/brvphoenix/wrtbwmon
