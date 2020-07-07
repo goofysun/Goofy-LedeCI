@@ -22,6 +22,7 @@ else
   git clone https://github.com/goofysun/lede -b 4.19 --depth 1
   cd lede
 fi
+sed -i 's/5.4/4.19/g' ./target/linux/x86/Makefile
 ./scripts/feeds update -a
 cp -rf ../diy.sh diy.sh
 chmod +x diy.sh
