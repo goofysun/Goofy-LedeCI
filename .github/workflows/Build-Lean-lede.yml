@@ -37,11 +37,8 @@ jobs:
       uses: actions/checkout@master    
     - name: Clone source and install
       run: |
-        git clone https://github.com/coolsnowwolf/lede
-        cd lede
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        
+        chmod +x make.sh
+        ./make.sh
         
     - name: Download and Load custom configuration
       run: |
@@ -52,30 +49,6 @@ jobs:
         mv ../x86_64.config .config
         make defconfig
         
-    - name: Download package
-      run: |
-        cd lede
-        make download -j8 || make download -j1 V=s
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
-        sudo df -h
-        
-    - name: Multi-core compile
-      run: |
-        cd lede
-        sudo df -h
-        echo -e "$(nproc) thread compile"
-        
-        make -j$(nproc)
-        sudo df -h
-        
-    - name: Single-core compile
-      if: failure()
-      run: |
-        sudo df -h
-        cd lede
-        make -j1 V=s
-        sudo df -h
     - name: Get current date
       id: date
       run: |
