@@ -7,7 +7,7 @@
 #=================================================
 
 
-name: Build Lean small 4.19
+name: Build Lean 4.19 small
 on:
   push:
     branches:
