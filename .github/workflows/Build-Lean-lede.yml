@@ -40,15 +40,6 @@ jobs:
         chmod +x make.sh
         ./make.sh
         
-    - name: Download and Load custom configuration
-      run: |
-        cd lede
-        mv ../diy.sh diy.sh
-        chmod +x diy.sh
-        ./diy.sh
-        mv ../x86_64.config .config
-        make defconfig
-        
     - name: Get current date
       id: date
       run: |
