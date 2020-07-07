@@ -17,11 +17,10 @@ if [ -d "lede" ];then
   rm -rf package/lean
   rm -rf package/custom
   git reset --hard
-  git checkout master
   git pull
 else
-  git clone  https://github.com/coolsnowwolf/lede
-cd lede
+  git clone https://github.com/goofysun/lede -b 4.19 --depth 1
+  cd lede
 fi
 ./scripts/feeds update -a
 cp -rf ../diy.sh diy.sh
