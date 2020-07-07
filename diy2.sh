@@ -1,7 +1,7 @@
 
 #!/bin/bash
 # 本脚本工作目录必须是git仓库的主目录
-
+sed -i 's/5.4/4.19/g' ./target/linux/x86/Makefile
 cd package/lean/
 #删除会被替换或者占用安装资源的包
 rm -rf luci-theme-argon
