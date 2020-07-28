@@ -16,8 +16,8 @@ git clone https://github.com/brvphoenix/wrtbwmon
 git clone https://github.com/lisaac/luci-app-dockerman
 git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
 #adguard home
-git clone https://github.com/rufengsuixing/luci-app-adguardhome
-git clone https://github.com/goofysun/openwrt-adguardhome
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome
+svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome
 git clone https://github.com/honwen/luci-app-aliddns
 #helloworld
 git clone https://github.com/jerrykuku/lua-maxminddb
