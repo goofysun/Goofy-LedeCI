@@ -3,7 +3,7 @@
 # 本脚本工作目录必须是git仓库的主目录
 cd package/lean/
 #删除会被替换或者占用安装资源的包
-rm -rf luci-theme-argon
+#rm -rf luci-theme-argon
 rm -rf luci-app-diskman
 rm -rf luci-app-wrtbwmon
 rm -rf qBittorrent
@@ -22,7 +22,7 @@ git clone https://github.com/honwen/luci-app-aliddns
 #helloworld
 git clone https://github.com/jerrykuku/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr
-git clone https://github.com/jerrykuku/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-theme-argon -b lede
 #smartdns
 git clone https://github.com/pymumu/openwrt-smartdns
 git clone https://github.com/pymumu/luci-app-smartdns -b lede
