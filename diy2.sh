@@ -5,13 +5,11 @@ cd package/lean/
 #删除会被替换或者占用安装资源的包
 #rm -rf luci-theme-argon
 rm -rf luci-app-diskman
-rm -rf luci-app-wrtbwmon
 rm -rf qBittorrent
 rm -rf luci-app-qbittorrent
 rm -rf qt5
 rm -rf rblibtorrent
 git clone https://github.com/lisaac/luci-app-diskman
-git clone https://github.com/brvphoenix/luci-app-wrtbwmon
 git clone https://github.com/brvphoenix/wrtbwmon
 git clone https://github.com/lisaac/luci-app-dockerman
 git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
@@ -31,10 +29,10 @@ svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
 #filemanager
 svn co https://github.com/Lienol/openwrt-package/trunk/lienol/luci-app-fileassistant
 #passwall
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall
-svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping
-git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
-svn co https://github.com/Lienol/openwrt-package/trunk/package/brook
+#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-passwall
+#svn co https://github.com/Lienol/openwrt-package/trunk/package/tcping
+#git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
+#svn co https://github.com/Lienol/openwrt-package/trunk/package/brook
 #svn co https://github.com/jsda/packages2/trunk/ntlf9t/luci-app-advancedsetting
 #svn co https://github.com/vernesong/OpenClash/tags/v0.38.8-beta/luci-app-openclash
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash
