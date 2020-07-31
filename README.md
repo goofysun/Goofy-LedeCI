@@ -24,10 +24,6 @@ https://github.com/openwrt/luci/trunk/applications/luci-app-acme
 
 https://github.com/lisaac/luci-app-diskman  磁盘管理
 
-https://github.com/brvphoenix/luci-app-wrtbwmon 实时流量监控界面
-
-https://github.com/brvphoenix/wrtbwmon        实时流量监控
-
 https://github.com/lisaac/luci-app-dockerman  docker 管理界面
 
 https://github.com/ElonH/Rclone-OpenWrt   网盘同步
