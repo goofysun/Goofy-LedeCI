@@ -51,7 +51,7 @@ if [ ! -f /etc/config/placeholder ]; then
   uci commit shadowsocksr
   
   uci set smartdns.@smartdns[0].enabled='0'
-  uci set smartdns.@smartdns[1].enabled='0'
+  uci set smartdns.@smartdns[0].seconddns_enabled='0'
   uci set smartdns.@smartdns[0].redirect='none'
   uci set smartdns.@smartdns[0].tcp_server='1'
   uci set smartdns.@smartdns[0].prefetch_domain='1'
