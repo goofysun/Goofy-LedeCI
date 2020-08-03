@@ -13,8 +13,8 @@ on:
     branches:
       - master
     paths:
-      - '.github/workflows/build-lean-lede-side.yml'
-      - 'X86_64_side.config'
+      - '.github/workflows/build-Lean-lede-side.yml'
+      - 'x86_64_side.config'
       - 'diy2.sh'
       - 'zzz-default-settings'
   schedule:
