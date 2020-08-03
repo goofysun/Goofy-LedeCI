@@ -14,7 +14,7 @@ on:
       - master
     paths:
       - '.github/workflows/build-lean-lede-side.yml'
-      - 'x86_64_side.config'
+      - 'X86_64_side.config'
       - 'diy2.sh'
       - 'zzz-default-settings'
   schedule:
