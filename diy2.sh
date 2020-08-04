@@ -18,7 +18,7 @@ cd package/custom
 
 #git clone https://github.com/lisaac/luci-app-diskman
 git clone https://github.com/lisaac/luci-app-dockerman
-git clone https://github.com/goofysun/uci-app-koolproxyR
+git clone https://github.com/goofysun/luci-app-koolproxyR
 #git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
 git clone https://github.com/honwen/luci-app-aliddns
 #helloworld
