@@ -57,7 +57,7 @@ jobs:
         mv ../diy2.sh diy.sh
         chmod +x diy.sh
         ./diy.sh
-        mv ../x86_64_small.config .config
+        mv ../x86_64_side.config .config
         make defconfig
         
     - name: Download package
