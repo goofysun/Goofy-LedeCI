@@ -15,8 +15,8 @@ on:
     paths:
       - '.github/workflows/build-Lean-lede-side.yml'
       - 'x86_64_side.config'
-      - 'diy2.sh'
-      - 'zzz-default-settings'
+      - 'diy-slide.sh'
+      - 'zzz-default-settings-slide'
   schedule:
     - cron: 0 9/24 * * */1
 
@@ -54,7 +54,7 @@ jobs:
     - name: Download and Load custom configuration
       run: |
         cd lede
-        mv ../diy2.sh diy.sh
+        mv ../diy-slide.sh diy.sh
         chmod +x diy.sh
         ./diy.sh
         mv ../x86_64_side.config .config
