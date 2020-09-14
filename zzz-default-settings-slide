@@ -12,7 +12,7 @@ uci set fstab.@global[0].anon_mount=1
 uci commit fstab
 
 #set newtwork	
-uci set network.lan.ipaddr="192.168.0.2"
+uci set network.lan.ipaddr="192.168.100.2"
 uci set network.wan.proto=dhcp
 uci set network.wan.ifname=eth5
 uci set network.wan6.ifname=eth5
