@@ -86,6 +86,7 @@ jobs:
         make -j1 V=s
         sudo df -h
     - name: Get current date
+      if: always()
       id: date
       run: |
         echo "::set-env name=date::$(date +'%m/%d_%Y_%H/%M')"
