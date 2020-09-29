@@ -51,7 +51,16 @@ jobs:
         git clone https://github.com/coolsnowwolf/lede
         cd lede
         ./scripts/feeds update -a
-                
+    
+    - name: Free up disk space
+      if: env.FREE_UP_DISK == 'true'
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo mkdir -p -m 777 /mnt/openwrt/dl /mnt/openwrt/staging_dir
+        ln -s /mnt/openwrt/dl openwrt/
+        ln -s /mnt/openwrt/staging_dir openwrt/
+
     - name: Download and Load custom configuration
       run: |
         cd lede
