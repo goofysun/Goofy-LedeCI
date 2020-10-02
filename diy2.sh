@@ -32,11 +32,14 @@ git clone https://github.com/jerrykuku/luci-app-vssr
 #git clone https://github.com/coolsnowwolf/packages
 git clone https://github.com/kenzok8/small
 git clone https://github.com/kenzok8/openwrt-packages
+rm -rf  ./openwrt-packages/luci-app-aliddns
+git clone https://github.com/Lienol/openwrt-package
+
 #修复small库里面V2ray 路径错误问题
 rm -rf ./small/v2ray
 rm -rf ./openwrt-package/package/v2ray
-rm -rf  ./openwrt-packages/luci-app-aliddns
-git clone https://github.com/Lienol/openwrt-package
+rm -rf ./openwrt-packages/package/v2ray
+
 #kenzok8 已包含 git clone https://github.com/fw876/helloworld
 #kenzok8 已包含 git clone https://github.com/openwrt-develop/luci-theme-atmaterial
 #kenzok8 已包含 git clone https://github.com/vernesong/OpenClash
