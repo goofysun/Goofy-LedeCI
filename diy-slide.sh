@@ -40,6 +40,7 @@ rm -rf ./openwrt-packages/package/v2ray
 rm -rf ./openwrt-packages/luci-app-aliddns
 rm -rf ./openwrt-package/package/v2ray-plugin
 rm -rf ./openwrt-packages/package/v2ray-plugin
+rm -rf ./small/v2ray-plugin
 
 #kenzok8 已包含 git clone https://github.com/fw876/helloworld
 #kenzok8 已包含 git clone https://github.com/openwrt-develop/luci-theme-atmaterial
