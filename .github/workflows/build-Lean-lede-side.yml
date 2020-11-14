@@ -156,7 +156,7 @@ jobs:
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      if: env.REPO_TOKEN && !cancelled()
       with:
         keep_latest: 10
         delete_tags: true
