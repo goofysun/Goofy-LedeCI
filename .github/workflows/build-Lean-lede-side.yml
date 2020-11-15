@@ -122,6 +122,11 @@ jobs:
         echo "::set-env name=COWURL::$cowurl"
         echo "Download Link: $cowurl  🚀"
     
+    - name: Delete
+      uses: goofysun/action-delete-latest-release@v3
+      with:
+        github_token: ${{ secrets.REPO_TOKEN }}
+
     - name: Create release
       id: create_release
       uses: actions/create-release@master
@@ -153,15 +158,6 @@ jobs:
       with:
         retain_days: 1
         keep_minimum_runs: 10
-
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: env.REPO_TOKEN && !cancelled()
-      with:
-        keep_latest: 10
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 #     - name: WeChat notification
 #       run: |
 #         [ ${{ env.status }} == 'success' ] && curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=🎉OpenWrt_${{ env.date3 }}_x86_64编译完成😋 || curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=❌OpenWrt_${{ env.date3 }}__x86_64编译失败😂
