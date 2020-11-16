@@ -27,6 +27,6 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Delete
-      uses: goofysun/action-delete-latest-release@master
+      uses: ame-yu/action-delete-latest-release@v2
       with:
         github_token: ${{ secrets.REPO_TOKEN }}
