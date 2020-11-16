@@ -7,7 +7,7 @@
 #=================================================
 
 
-name: Build Lean side
+name: Delete Releases
 on:
   push:
     branches:
@@ -39,6 +39,6 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
     
     - name: Delete
-      uses: goofysun/action-delete-latest-release@v3
+      uses: goofysun/action-delete-latest-release@master
       with:
         github_token: ${{ secrets.REPO_TOKEN }}
