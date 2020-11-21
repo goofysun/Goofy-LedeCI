@@ -87,9 +87,9 @@ jobs:
     - name: Get current date
       id: date
       run: |
-        echo "::set-env name=date::$(date +'%m/%d_%Y_%H/%M')"
-        echo "::set-env name=date2::$(date +'%m/%d %Y')"
-        echo "::set-env name=date3::$(date +'%m.%d')"   
+        echo "date=$(date +'%m/%d_%Y_%H/%M')" >> $GITHUB_ENV
+        echo "date2=$(date +'%m/%d %Y')" >> $GITHUB_ENV
+        echo "date3=$(date +'%m.%d')" >> $GITHUB_ENV 
     - name: Upload entire bin directory
       uses: actions/upload-artifact@master
       if: always()
@@ -102,7 +102,7 @@ jobs:
       run: |
         cd lede/bin/targets/*/*
         rm -rf packages
-        echo "::set-env name=FIRMWARE::$(pwd)"
+        echo "FIRMWARE=$(pwd)" >> $GITHUB_ENV
         
     - name: Only Upload firmware (Without packages)
       uses: actions/upload-artifact@master
@@ -119,8 +119,12 @@ jobs:
         curl -fsSL git.io/file-transfer | sh
         cowurl=$(./transfer cow --block 2621440 -s --no-progress ${FIRMWARE})
         cowurl=$(echo $cowurl | grep -o -E "https[^ ]*")
-        echo "::set-env name=COWURL::$cowurl"
-        echo "Download Link: $cowurl  🚀"
+        echo "COWURL=$cowurl" >> $GITHUB_ENV
+        echo "奶牛Download Link: $cowurl  🚀"
+        weturl=$(./transfer wet -s -p 16 --no-progress ${FIRMWARE})
+        weturl=$(echo $weturl | grep -o -E "https[^ ]*")
+        echo "WETURL=$weturl" >> $GITHUB_ENV
+        echo "wet Download Link: $weturl  🚀"
 
     - name: Create release
       id: create_release
@@ -135,6 +139,7 @@ jobs:
         body: |
             墙内加速下载🔥:
             奶牛快传: ${{ env.COWURL }} 🚀
+            WeTransfer: ${{ env.WETURL }} 🚀
             请分配不低于500m 的内存和存储空间 💾
         draft: false
         prerelease: false     
