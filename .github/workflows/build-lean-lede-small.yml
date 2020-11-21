@@ -103,7 +103,7 @@ jobs:
       run: |
         cd lede/bin/targets/*/*
         rm -rf packages
-        echo "::set-env name=FIRMWARE::$(pwd)"
+        echo "FIRMWARE=$(pwd)" >> $GITHUB_ENV
         
     - name: Only Upload firmware (Without packages)
       uses: actions/upload-artifact@master
