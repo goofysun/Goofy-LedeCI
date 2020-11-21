@@ -120,7 +120,7 @@ jobs:
         curl -fsSL git.io/file-transfer | sh
         cowurl=$(./transfer cow --block 2621440 -s --no-progress ${FIRMWARE})
         cowurl=$(echo $cowurl | grep -o -E "https[^ ]*")
-        echo "COWURL=cowurl" >> $GITHUB_ENV
+        echo "COWURL=$cowurl" >> $GITHUB_ENV
         echo "奶牛Download Link: $cowurl  🚀"
         weturl=$(./transfer wet -s -p 16 --no-progress ${FIRMWARE})
         weturl=$(echo $weturl | grep -o -E "https[^ ]*")
