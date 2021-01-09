@@ -151,11 +151,6 @@ jobs:
         github-token: ${{ secrets.REPO_TOKEN }}
         release-url: ${{ steps.create_release.outputs.upload_url }}
           
-    - name: Delete workflow runs
-      uses: ActionsRML/delete-workflow-runs@main
-      with:
-        retain_days: 1
-        keep_minimum_runs: 10
 #     - name: WeChat notification
 #       run: |
 #         [ ${{ env.status }} == 'success' ] && curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=🎉OpenWrt_${{ env.date3 }}_x86_64编译完成😋 || curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=❌OpenWrt_${{ env.date3 }}__x86_64编译失败😂
