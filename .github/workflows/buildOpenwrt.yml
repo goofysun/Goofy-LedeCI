@@ -53,6 +53,7 @@ jobs:
         mv ../diy-openwrt.sh diy.sh
         chmod +x diy.sh
         ./diy.sh
+        cp ../x86-64-openwrt.config ./.config
         make defconfig
         
     - name: Download package
