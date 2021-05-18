@@ -77,7 +77,7 @@ jobs:
       if: failure()
       run: |
         sudo df -h
-        cd lede
+        cd openwrt
         make -j1 V=s
         sudo df -h
     - name: Get current date
