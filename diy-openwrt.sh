@@ -9,7 +9,7 @@ cd package/custom
 git clone --depth=1 https://github.com/siwind/openwrt-vlmcsd
 git clone --depth=1 https://github.com/siwind/luci-app-vlmcsd
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
-
+git clone --depth=1 https://github.com/jerrykuku/luci-app-jd-dailybonus
 cd ../../
 # Modify default IP
 
