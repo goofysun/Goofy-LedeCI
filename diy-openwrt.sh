@@ -6,7 +6,7 @@ rm -rf package/custom
 mkdir -p package/custom
 #rm -rf package/lean/baidupcs-web
 cd package/custom
-git clone --depth=1 https://github.com/goofysun/openwrt-packages
+git clone --depth=1 https://github.com/goofysun/openwrt-packages -b goofyliu
 cd ../../
 # Modify default IP
 
