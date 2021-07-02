@@ -27,12 +27,13 @@ rm -rf ./small/v2ray-plugin
 #kenzok8 已包含 git clone https://github.com/vernesong/OpenClash
 git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
-git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06
+git clone https://github.com/jerrykuku/luci-theme-argon
 git clone https://github.com/lisaac/luci-app-dockerman
 git clone https://github.com/jerrykuku/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr.git
 git clone https://github.com/honwen/luci-app-aliddns
 git clone https://github.com/goofysun/luci-app-koolproxyR
+git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
 #svn co https://github.com/jsda/packages2/trunk/ntlf9t/luci-app-advancedsetting
 #git clone https://github.com/pymumu/openwrt-smartdns smartdns
 #git clone https://github.com/pymumu/luci-app-smartdns -b lede
