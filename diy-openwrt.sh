@@ -11,7 +11,6 @@ git clone --depth=1 https://github.com/siwind/luci-app-vlmcsd
 git clone --depth=1 https://github.com/jerrykuku/luci-app-jd-dailybonus
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/vernesong/OpenClash
-rm -rf ./openwrt-passwall/v2ray-plugin
 cd ../../
 # Modify default IP
 
