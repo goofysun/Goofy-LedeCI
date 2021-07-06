@@ -11,6 +11,9 @@ git clone --depth=1 https://github.com/siwind/luci-app-vlmcsd
 git clone --depth=1 https://github.com/jerrykuku/luci-app-jd-dailybonus
 git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/vernesong/OpenClash
+#helloworld
+git clone https://github.com/jerrykuku/lua-maxminddb
+git clone https://github.com/jerrykuku/luci-app-vssr
 cd ../../
 # Modify default IP
 
