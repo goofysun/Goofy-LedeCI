@@ -25,14 +25,15 @@ cd package/custom
 git clone https://github.com/jerrykuku/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr
 #smartdns
-#git clone https://github.com/pymumu/openwrt-smartdns
-#git clone https://github.com/pymumu/luci-app-smartdns -b lede
+git clone https://github.com/pymumu/openwrt-smartdns
+git clone https://github.com/pymumu/luci-app-smartdns -b lede
 
 #git https://github.com/KFERMercer/openwrt-baidupcs-web
 #git clone https://github.com/coolsnowwolf/packages
 git clone https://github.com/kenzok8/small
 git clone https://github.com/kenzok8/openwrt-packages
 rm -rf  ./openwrt-packages/luci-app-aliddns
+rm -rf  ./openwrt-packages/luci-app-smartdns
 git clone https://github.com/Lienol/openwrt-package
 #修复small库里面V2ray 路径错误问题
 rm -rf ./small/v2ray
@@ -48,7 +49,7 @@ rm -rf ./small/v2ray-plugin
 #kenzok8 已包含 git clone https://github.com/vernesong/OpenClash
 #git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
-git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 #这个有新图标的主题，容易挂
 cd ../../
 
