@@ -34,6 +34,7 @@ git clone https://github.com/kenzok8/small
 git clone https://github.com/kenzok8/openwrt-packages
 rm -rf  ./openwrt-packages/luci-app-aliddns
 rm -rf  ./openwrt-packages/luci-app-smartdns
+rm -rf  ./openwrt-packages/smartdns
 git clone https://github.com/Lienol/openwrt-package
 #修复small库里面V2ray 路径错误问题
 rm -rf ./small/v2ray
