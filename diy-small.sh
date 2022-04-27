@@ -25,14 +25,15 @@ git clone https://github.com/honwen/luci-app-aliddns
 git clone https://github.com/jerrykuku/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr
 #smartdns
-#git clone https://github.com/pymumu/openwrt-smartdns
-#git clone https://github.com/pymumu/luci-app-smartdns -b lede
+git clone https://github.com/pymumu/openwrt-smartdns
+git clone https://github.com/pymumu/luci-app-smartdns -b lede
 
 #git https://github.com/KFERMercer/openwrt-baidupcs-web
 #git clone https://github.com/coolsnowwolf/packages
 git clone https://github.com/kenzok8/small
 git clone https://github.com/kenzok8/openwrt-packages
 rm -rf  ./openwrt-packages/luci-app-aliddns
+rm -rf  ./openwrt-packages/luci-app-smartdns
 git clone https://github.com/Lienol/openwrt-package
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
 
