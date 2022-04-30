@@ -10,7 +10,7 @@ cd package/custom
 #git https://github.com/KFERMercer/openwrt-baidupcs-web
 #git clone https://github.com/coolsnowwolf/packages
 git clone https://github.com/kenzok8/small
-git clone https://github.com/kenzok8/openwrt-packages
+git clone https://github.com/goofysun/openwrt-packages
 git clone https://github.com/Lienol/openwrt-package
 
 #修复small库里面V2ray 路径错误问题
@@ -27,7 +27,7 @@ rm -rf ./small/v2ray-plugin
 #kenzok8 已包含 git clone https://github.com/vernesong/OpenClash
 git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
-git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06
+#git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06
 git clone https://github.com/lisaac/luci-app-dockerman
 git clone https://github.com/jerrykuku/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr.git
