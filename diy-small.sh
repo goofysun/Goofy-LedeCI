@@ -31,10 +31,8 @@ git clone https://github.com/jerrykuku/luci-app-vssr
 #git https://github.com/KFERMercer/openwrt-baidupcs-web
 #git clone https://github.com/coolsnowwolf/packages
 git clone https://github.com/kenzok8/small
-git clone https://github.com/goofysun/openwrt-packages
+git clone https://github.com/kenzok8/openwrt-packages
 rm -rf  ./openwrt-packages/luci-app-aliddns
-#rm -rf  ./openwrt-packages/luci-app-smartdns
-#rm -rf  ./openwrt-packages/smartdns
 git clone https://github.com/Lienol/openwrt-package
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
 
