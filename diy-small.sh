@@ -16,7 +16,7 @@ mkdir -p package/custom
 #rm -rf package/lean/baidupcs-web
 cd package/custom
 
-#git clone https://github.com/lisaac/luci-app-diskman
+git clone https://github.com/AlexZhuo/luci-app-bandwidthd
 git clone https://github.com/lisaac/luci-app-dockerman
 git clone https://github.com/goofysun/luci-app-koolproxyR
 #git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
