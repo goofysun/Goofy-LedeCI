@@ -16,24 +16,24 @@ mkdir -p package/custom
 #rm -rf package/lean/baidupcs-web
 cd package/custom
 
-git clone https://github.com/lisaac/luci-app-dockerman
-git clone https://github.com/goofysun/luci-app-koolproxyR
+git clone https://github.com/lisaac/luci-app-dockerman --depth 1
+git clone https://github.com/goofysun/luci-app-koolproxyR --depth 1
 #git clone https://github.com/ElonH/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
-git clone https://github.com/honwen/luci-app-aliddns
+git clone https://github.com/honwen/luci-app-aliddns --depth 1
 #helloworld
-git clone https://github.com/jerrykuku/lua-maxminddb
-git clone https://github.com/jerrykuku/luci-app-vssr
+git clone https://github.com/jerrykuku/lua-maxminddb --depth 1
+git clone https://github.com/jerrykuku/luci-app-vssr --depth 1
 #smartdns
-#git clone https://github.com/pymumu/openwrt-smartdns
-#git clone https://github.com/pymumu/luci-app-smartdns -b lede
+#git clone https://github.com/pymumu/openwrt-smartdns --depth 1
+#git clone https://github.com/pymumu/luci-app-smartdns -b lede --depth 1
 
-#git https://github.com/KFERMercer/openwrt-baidupcs-web
-#git clone https://github.com/coolsnowwolf/packages
-git clone https://github.com/kenzok8/small
-git clone https://github.com/kenzok8/openwrt-packages
-rm -rf  ./openwrt-packages/luci-app-aliddns
-git clone https://github.com/Lienol/openwrt-package
-git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
+#git https://github.com/KFERMercer/openwrt-baidupcs-web --depth 1
+#git clone https://github.com/coolsnowwolf/packages --depth 1
+git clone https://github.com/kenzok8/small --depth 1
+git clone https://github.com/kenzok8/openwrt-packages --depth 1
+rm -rf  ./openwrt-packages/luci-app-aliddns 
+git clone https://github.com/Lienol/openwrt-package --depth 1
+git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
 
 #修复small库里面V2ray 路径错误问题
 rm -rf ./small/v2ray
@@ -44,9 +44,9 @@ rm -rf ./openwrt-package/package/v2ray-plugin
 rm -rf ./openwrt-packages/package/v2ray-plugin
 rm -rf ./openwrt-packages/luci-app-openclash
 rm -rf ./small/v2ray-plugin
-#kenzok8 已包含 git clone https://github.com/fw876/helloworld
-#kenzok8 已包含 git clone https://github.com/openwrt-develop/luci-theme-atmaterial
-git clone https://github.com/vernesong/OpenClash
+#kenzok8 已包含 git clone https://github.com/fw876/helloworld --depth 1
+#kenzok8 已包含 git clone https://github.com/openwrt-develop/luci-theme-atmaterial --depth 1
+git clone https://github.com/vernesong/OpenClash --depth 1
 #git clone https://github.com/tty228/luci-app-serverchan
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome
 #git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06
