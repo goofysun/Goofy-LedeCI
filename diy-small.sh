@@ -47,6 +47,7 @@ rm -rf ./small/v2ray-plugin
 #kenzok8 已包含 git clone https://github.com/fw876/helloworld --depth 1
 #kenzok8 已包含 git clone https://github.com/openwrt-develop/luci-theme-atmaterial --depth 1
 git clone https://github.com/vernesong/OpenClash --depth 1
+git clone https://github.com/destan19/OpenAppFilter --depth 1
 #git clone https://github.com/tty228/luci-app-serverchan
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome
 #git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06
