@@ -48,6 +48,7 @@ rm -rf ./small/v2ray-plugin
 #kenzok8 已包含 git clone https://github.com/vernesong/OpenClash
 #git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/rufengsuixing/luci-app-adguardhome
+git clone https://github.com/destan19/OpenAppFilter --depth 1
 #git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 #这个有新图标的主题，容易挂
 cd ../../
