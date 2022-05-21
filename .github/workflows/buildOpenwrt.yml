@@ -44,7 +44,7 @@ jobs:
     
     - name: Clone source and install
       run: |
-        git clone https://github.com/openwrt/openwrt -b openwrt-21.02
+        git clone https://github.com/openwrt/openwrt -b openwrt-22.03
         cd openwrt
         ./scripts/feeds update -a
                 
