@@ -22,3 +22,4 @@ cd ../../
 
 # Add some default settings
 ./scripts/feeds install -a
+./scripts/feeds update -a
