@@ -36,8 +36,8 @@ rm -rf ./small/v2ray-plugin
 
 
 cd ../../
+sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/luci-app-openvpn-server/Makefile
 # Modify default IP
-
 #sed -i 's/192.168.100.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168/10.0/g' package/base-files/files/bin/config_generate
 
