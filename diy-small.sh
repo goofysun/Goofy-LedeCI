@@ -34,7 +34,8 @@ git clone https://github.com/kenzok8/openwrt-packages --depth 1
 rm -rf  ./openwrt-packages/luci-app-aliddns 
 git clone https://github.com/Lienol/openwrt-package --depth 1
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
-
+git clone https://github.com/brvphoenix/wrtbwmon --depth 1
+git clone https://github.com/brvphoenix/luci-app-wrtbwmon --depth 1
 #修复small库里面V2ray 路径错误问题
 rm -rf ./small/v2ray
 rm -rf ./openwrt-package/package/v2ray
