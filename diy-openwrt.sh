@@ -15,7 +15,7 @@ svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-openvpn-
 git clone --depth=1 https://github.com/brvphoenix/wrtbwmon
 git clone --depth=1 https://github.com/brvphoenix/luci-app-wrtbwmon
 # mwan3helper
-svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/luci-app-mwan3helper luci-app-mwan3helper
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-mwan3helper luci-app-mwan3helper
 
 #helloworld
 #git clone https://github.com/jerrykuku/lua-maxminddb
