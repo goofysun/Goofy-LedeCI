@@ -16,6 +16,7 @@ git clone --depth=1 https://github.com/brvphoenix/wrtbwmon
 git clone --depth=1 https://github.com/brvphoenix/luci-app-wrtbwmon
 # mwan3helper
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-mwan3helper luci-app-mwan3helper
+svn co https://github.com/coolsnowwolf/lede/trunk/package/lean/ddns-scripts_aliyun ddns-scripts_aliyun
 
 #helloworld
 #git clone https://github.com/jerrykuku/lua-maxminddb
@@ -40,6 +41,7 @@ rm -rf ./small/v2ray-plugin
 cd ../../
 sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-mwan3helper/Makefile
 sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-openvpn-server/Makefile
+sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/ddns-scripts_aliyun/Makefile
 # Modify default IP
 #sed -i 's/192.168.100.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168/10.0/g' package/base-files/files/bin/config_generate
