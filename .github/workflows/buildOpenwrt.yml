@@ -17,7 +17,7 @@ on:
       - 'diy-openwrt.sh'
       - 'x86-64-openwrt.config'
   schedule:
-    - cron: 0 9/24 * * 5/7
+    - cron: 0 9/24 * * 5
 
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
     
     - name: Clone source and install
       run: |
-        git clone https://github.com/openwrt/openwrt -b openwrt-22.03
+        git clone --depth=1 https://github.com/Lienol/openwrt -b 22.03
         cd openwrt
         ./scripts/feeds update -a
                 
@@ -56,8 +56,6 @@ jobs:
         ./diy.sh
         cp ../x86-64-openwrt.config ./.config
         make defconfig
-        cp /usr/bin/upx /home/runner/work/Goofy-LedeCI/Goofy-LedeCI/openwrt/staging_dir/host/bin/
-        cp /usr/bin/upx-ucl /home/runner/work/Goofy-LedeCI/Goofy-LedeCI/openwrt/staging_dir/host/bin/
         
     - name: Download package
       run: |
