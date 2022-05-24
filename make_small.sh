@@ -22,7 +22,7 @@ else
   cd lede
 fi
 ./scripts/feeds update -a
-cp -rf ../diy2.sh diy.sh
+cp -rf ../diy-small.sh diy.sh
 chmod +x diy.sh
 ./diy.sh
 cp -rf ../x86_64_small.config .config
