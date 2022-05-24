@@ -25,12 +25,12 @@ git clone https://github.com/kenzok8/openwrt-packages --depth 1
 git clone https://github.com/Lienol/openwrt-package --depth 1
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
 #修复small库里面V2ray 路径错误问题
-rm -rf ./small/v2ray
-rm -rf ./openwrt-package/package/v2ray
-rm -rf ./openwrt-packages/package/v2ray
-rm -rf ./openwrt-package/package/v2ray-plugin
-rm -rf ./openwrt-packages/package/v2ray-plugin
-rm -rf ./small/v2ray-plugin
+#rm -rf ./small/v2ray
+#rm -rf ./openwrt-package/package/v2ray
+#rm -rf ./openwrt-packages/package/v2ray
+#rm -rf ./openwrt-package/package/v2ray-plugin
+#rm -rf ./openwrt-packages/package/v2ray-plugin
+#rm -rf ./small/v2ray-plugin
 git clone https://github.com/destan19/OpenAppFilter --depth 1
 
 #这个有新图标的主题，容易挂
