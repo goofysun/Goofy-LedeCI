@@ -7,7 +7,7 @@ mkdir -p package/custom
 cd package/custom
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-openvpn-server luci-app-openvpn-server
 git clone --depth=1 https://github.com/kenzok8/small-package
-
+git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
 
 cd ../../
