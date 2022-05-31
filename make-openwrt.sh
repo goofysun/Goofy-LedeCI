@@ -17,7 +17,7 @@ if [ -d "openwrt" ];then
   git reset --hard
   git pull
 else
-  git clone git https://github.com/Lienol/openwrt -b 22.03
+  git clone https://github.com/Lienol/openwrt -b 22.03
   cd openwrt
 fi
 ./scripts/feeds update -a
