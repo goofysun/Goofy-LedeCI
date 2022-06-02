@@ -21,3 +21,6 @@ sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-openvpn-server
 # Add some default settings
 ./scripts/feeds update -a
 ./scripts/feeds install -a
+rm package/custom/small-package/luci-app-openvpn-server -rf
+rm package/feeds/other/luci-app-wrtbwmon -rf
+
