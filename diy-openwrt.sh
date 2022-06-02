@@ -23,4 +23,4 @@ sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-openvpn-server
 ./scripts/feeds install -a
 rm package/custom/small-package/luci-app-openvpn-server -rf
 rm package/feeds/other/luci-app-wrtbwmon -rf
-
+rm package/feeds/packages/adguardhome -rf
