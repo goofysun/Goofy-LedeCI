@@ -20,6 +20,7 @@ git clone https://github.com/Lienol/openwrt-package --depth 1
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
 git clone https://github.com/destan19/OpenAppFilter --depth 1
 git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
+git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
 #这个有新图标的主题，容易挂
 cd ../../
 
