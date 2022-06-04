@@ -1,6 +1,7 @@
 
 #!/bin/bash
 # 本脚本工作目录必须是git仓库的主目录
+./scripts/feeds install -a
 cd package/lean/
 #删除会被替换或者占用安装资源的包
 
@@ -9,6 +10,7 @@ rm -rf luci-app-qbittorrent
 rm -rf qt5
 rm -rf rblibtorrent
 cd ../../
+
 
 rm -rf package/custom
 mkdir -p package/custom
@@ -26,4 +28,4 @@ cd ../../
 
 # Add some default settings
 cp -rf ../zzz-default-settings  package/lean/default-settings/files/zzz-default-settings
-./scripts/feeds install -a
+
