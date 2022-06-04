@@ -46,7 +46,7 @@ git clone https://github.com/sirpdboy/sirpdboy-package --depth 1
 
 #openclash
 git clone https://github.com/yuos-bit/luci-app-openclash.git --depth 1
-
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
 #这个有新图标的主题，容易挂
 cd ../../
 
