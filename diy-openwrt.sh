@@ -9,7 +9,7 @@ svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-openvpn-
 git clone --depth=1 https://github.com/kenzok8/small-package
 git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
-
+git clone https://github.com/vernesong/OpenClash -b dev --depth 1
 cd ../../
 
 sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-openvpn-server/Makefile
@@ -22,6 +22,7 @@ sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-openvpn-server
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 rm package/custom/small-package/luci-app-openvpn-server -rf
+rm package/custom/small-package/luci-app-openclash -rf
 rm package/feeds/other/luci-app-wrtbwmon -rf
 rm package/feeds/packages/adguardhome -rf
 rm package/feeds/other/luci-app-adguardhome -rf
