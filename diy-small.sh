@@ -47,6 +47,9 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome adguardhome
 #openclash
 git clone https://github.com/yuos-bit/luci-app-openclash.git --depth 1
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
+
+svn co https://github.com/kenzok8/openwrt-packages/trunk//luci-app-advanced luci-app-advanced
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argonne luci-theme-argonne
 #这个有新图标的主题，容易挂
 cd ../../
 
