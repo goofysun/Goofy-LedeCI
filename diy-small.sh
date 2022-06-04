@@ -41,9 +41,9 @@ git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
 #netspeedtest
 git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 1
 
-#sirpdboy packeges
-git clone https://github.com/sirpdboy/sirpdboy-package --depth 1
-
+#adguardhome packeges
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome luci-app-adguardhome
+svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome adguardhome
 #openclash
 git clone https://github.com/yuos-bit/luci-app-openclash.git --depth 1
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
