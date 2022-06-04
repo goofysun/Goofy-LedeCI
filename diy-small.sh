@@ -41,6 +41,9 @@ git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 
 #sirpdboy packeges
 git clone https://github.com/sirpdboy/sirpdboy-package --depth 1
 
+#openclash
+git clone git clone https://github.com/yuos-bit/luci-app-openclash.git --depth 1
+
 #这个有新图标的主题，容易挂
 cd ../../
 
