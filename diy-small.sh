@@ -32,6 +32,14 @@ git clone https://github.com/destan19/OpenAppFilter --depth 1
 git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
 git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
 
+#poweroff
+git clone https://github.com/sirpdboy/luci-app-poweroffdevice --depth 1
+
+#netspeedtest
+git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 1
+
+#sirpdboy packeges
+git clone https://github.com/sirpdboy/sirpdboy-package --depth 1
 
 #这个有新图标的主题，容易挂
 cd ../../
