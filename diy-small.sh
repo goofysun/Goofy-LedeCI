@@ -36,7 +36,7 @@ git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
 git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
 
 #poweroff
-git clone https://github.com/sirpdboy/luci-app-poweroffdevice --depth 1
+git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
 
 #netspeedtest
 git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 1
