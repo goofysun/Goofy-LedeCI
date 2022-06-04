@@ -52,4 +52,4 @@ cd ../../
 
 # Add some default settings
 cp -rf ../zzz-default-settings  package/lean/default-settings/files/zzz-default-settings
-
+rm package/feeds/packages/adguardhome -rf
