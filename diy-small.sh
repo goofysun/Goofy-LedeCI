@@ -53,6 +53,8 @@ svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argonne luci
 
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-control-webrestriction luci-app-control-webrestriction
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-control-weburl luci-app-control-weburl
+svn co https://github.com/kenzok8/small-package/trunk/luci-app-smartdns luci-app-smartdns
+svn co https://github.com/kenzok8/small-package/trunk/smartdns smartdns
 
 #这个有新图标的主题，容易挂
 cd ../../
