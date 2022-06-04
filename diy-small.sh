@@ -16,13 +16,23 @@ rm -rf package/custom
 mkdir -p package/custom
 cd package/custom
 
+#VSSR
+git clone https://github.com/jerrykuku/lua-maxminddb.git --depth 1
+git clone https://github.com/fw876/helloworld --depth 1
+git clone https://github.com/xiaorouji/openwrt-passwall --depth 1
+git clone https://github.com/jerrykuku/luci-app-vssr.git  --depth 1
 
-git clone https://github.com/kenzok8/small-package --depth 1
-git clone https://github.com/Lienol/openwrt-package --depth 1
+#bandwidth
 git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
+
+#app filter
 git clone https://github.com/destan19/OpenAppFilter --depth 1
+
+#speed limit
 git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
 git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
+
+
 #这个有新图标的主题，容易挂
 cd ../../
 
