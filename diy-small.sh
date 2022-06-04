@@ -32,8 +32,8 @@ git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
 git clone https://github.com/destan19/OpenAppFilter --depth 1
 
 #speed limit
-#git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
-#git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
+git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
+git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
 
 #poweroff
 git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
@@ -50,6 +50,10 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk//luci-app-advanced luci-app-advanced
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argonne luci-theme-argonne
+
+svn co https://github.com/kenzok8/small-package/trunk/luci-app-control-webrestriction luci-app-control-webrestriction
+svn co https://github.com/kenzok8/small-package/trunk/luci-app-control-weburl luci-app-control-weburl
+
 #这个有新图标的主题，容易挂
 cd ../../
 
