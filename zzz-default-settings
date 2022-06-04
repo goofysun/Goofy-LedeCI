@@ -13,9 +13,6 @@ uci commit fstab
 
 #set newtwork	
 uci set network.lan.ipaddr="192.168.100.1"
-uci set network.wan.proto=dhcp
-uci set network.wan.ifname=eth5
-uci set network.wan6.ifname=eth5
 uci commit network
 
 if [ ! -f /etc/config/placeholder ]; then
