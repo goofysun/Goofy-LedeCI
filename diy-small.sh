@@ -32,8 +32,8 @@ git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
 git clone https://github.com/destan19/OpenAppFilter --depth 1
 
 #speed limit
-git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
-git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
+#git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
+#git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
 
 #poweroff
 git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
