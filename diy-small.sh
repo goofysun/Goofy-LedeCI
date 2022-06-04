@@ -16,6 +16,9 @@ rm -rf package/custom
 mkdir -p package/custom
 cd package/custom
 
+#ttnode
+git clone https://github.com/jerrykuku/luci-app-ttnode --depth 1
+
 #VSSR
 git clone https://github.com/jerrykuku/lua-maxminddb.git --depth 1
 git clone https://github.com/fw876/helloworld --depth 1
