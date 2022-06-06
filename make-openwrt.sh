@@ -24,7 +24,7 @@ fi
 cp -rf ../diy-openwrt.sh diy.sh
 chmod +x diy.sh
 ./diy.sh
-#cp -rf ../x86_64.config .config
+cp -rf ../x86-64-openwrt.config .config
 make defconfig
 make download -j8 || make download -j1 V=s
 make -j$(nproc) || make -j1 V=s
