@@ -44,7 +44,7 @@ jobs:
     
     - name: Clone source and install
       run: |
-        git clone --depth=1 -b 21.02 --single-branch https://github.com/Lienol/openwrt
+        git clone --depth=1 -b 22.03 --single-branch https://github.com/Lienol/openwrt
         cd openwrt
         ./scripts/feeds update -a
                 
