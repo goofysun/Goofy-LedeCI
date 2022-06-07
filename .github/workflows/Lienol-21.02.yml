@@ -7,13 +7,13 @@
 #=================================================
 
 
-name: Build openwrt side
+name: Build Lienol-21.02
 on:
   push:
     branches:
       - master
     paths:
-      - '.github/workflows/buildOpenwrt.yml'
+      - '.github/workflows/Lienol-21.02.yml'
       - 'diy-openwrt.sh'
       - 'x86-64-openwrt.config'
   schedule:
