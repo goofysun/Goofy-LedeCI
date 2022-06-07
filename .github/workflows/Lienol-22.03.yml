@@ -130,8 +130,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
-        tag_name: ${{ env.date }}_x86_64_旁路由_openwrt
-        release_name: ${{ env.date2 }} _x86_64_旁路由_openwrt
+        tag_name: ${{ env.date }}_x86_64_旁路由_openwrt_22.03
+        release_name: ${{ env.date2 }} _x86_64_旁路由_openwrt_22.03
         body: |
             墙内加速下载🔥:
             奶牛快传: ${{ env.COWURL }} 🚀
