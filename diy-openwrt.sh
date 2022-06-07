@@ -12,15 +12,18 @@ git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
 git clone https://github.com/vernesong/OpenClash -b dev --depth 1
 cd ../../
 
+
+
+# Add some default settings
+./scripts/feeds update -a
+./scripts/feeds install -a
+
 sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-openvpn-server/Makefile
 
 # Modify default IP
 sed -i 's/192.168.100.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168/10.0/g' package/base-files/files/bin/config_generate
 
-# Add some default settings
-./scripts/feeds update -a
-./scripts/feeds install -a
 rm package/custom/small-package/luci-app-openvpn-server -rf
 rm package/custom/small-package/luci-app-openclash -rf
 rm package/feeds/other/luci-app-wrtbwmon -rf
