@@ -45,7 +45,6 @@ git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome luci-app-adguardhome
 svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome adguardhome
 #openclash
-git clone https://github.com/yuos-bit/luci-app-openclash.git --depth 1
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk//luci-app-advanced luci-app-advanced
