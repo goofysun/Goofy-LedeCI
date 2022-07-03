@@ -7,7 +7,7 @@
 #=================================================
 
 
-name: Build Lienol-21.02
+name: Build immortalwrt-21.02
 on:
   push:
     branches:
