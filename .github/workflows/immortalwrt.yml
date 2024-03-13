@@ -47,7 +47,7 @@ jobs:
     
     - name: Clone source and install
       run: |
-        git clone --depth=1 -b openwrt-21.02 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
+        git clone --depth=1 -b openwrt-23.05 --single-branch https://github.com/immortalwrt/immortalwrt openwrt
         cd openwrt
         ./scripts/feeds update -a
                 
