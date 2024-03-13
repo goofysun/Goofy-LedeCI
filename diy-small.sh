@@ -1,6 +1,6 @@
 
 #!/bin/bash
-# 本脚本工作目录必须是git仓库的主目录
+# 本脚本工作目录必须是git仓库的主目录 
 ./scripts/feeds install -a
 cd package/lean/
 #删除会被替换或者占用安装资源的包
