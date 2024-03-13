@@ -41,20 +41,8 @@ git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
 #netspeedtest
 git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 1
 
-#adguardhome packeges
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-adguardhome luci-app-adguardhome
-svn co https://github.com/kenzok8/openwrt-packages/trunk/adguardhome adguardhome
-#openclash
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
 
-svn co https://github.com/kenzok8/openwrt-packages/trunk//luci-app-advanced luci-app-advanced
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argonne luci-theme-argonne
-
-svn co https://github.com/kenzok8/small-package/trunk/luci-app-control-webrestriction luci-app-control-webrestriction
-svn co https://github.com/kenzok8/small-package/trunk/luci-app-control-weburl luci-app-control-weburl
-svn co https://github.com/kenzok8/small-package/trunk/luci-app-timecontrol luci-app-timecontrol
-svn co https://github.com/kenzok8/small-package/trunk/luci-app-smartdns luci-app-smartdns
-svn co https://github.com/kenzok8/small-package/trunk/smartdns smartdns
+git clone  https://github.com/kenzok8/small-package/
 
 #这个有新图标的主题，容易挂
 cd ../../
