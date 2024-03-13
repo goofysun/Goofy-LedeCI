@@ -42,7 +42,7 @@ git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
 git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 1
 
 
-git clone  https://github.com/kenzok8/small-package/
+git clone  https://github.com/kenzok8/openwrt-packages  --depth 1
 
 #这个有新图标的主题，容易挂
 cd ../../
