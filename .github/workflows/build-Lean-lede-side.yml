@@ -127,32 +127,27 @@ jobs:
         echo "WETURL=$weturl" >> $GITHUB_ENV
         echo "wet Download Link: $weturl  🚀"
 
-    - name: Create release
-      id: create_release
-      uses: actions/create-release@master
-      continue-on-error: true
-      if: env.REPO_TOKEN
+
+    - name: Generate release tag
+      id: tag
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      run: |
+        echo -e "墙内外加速下载 🎈:\n" >> release.txt
+        echo "🔗 [Cowtransfer](${{ env.COWURL }})" >> release.txt
+        echo "🔗 [WeTransfer](${{ env.WETURL }})" >> release.txt
+        echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Upload firmware to release
+      uses: softprops/action-gh-release@master
+      if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
+        files: "${{ env.FIRMWARE }}/*"
+        name: ${{ env.date2 }} ${{matrix.target}}
         tag_name: ${{ env.date }}_x86_64_旁路由
-        release_name: ${{ env.date2 }} _x86_64_旁路由
-        body: |
-            墙内加速下载🔥:
-            奶牛快传: ${{ env.COWURL }} 🚀
-            WeTransfer: ${{ env.WETURL }} 🚀
-            请分配不低于500m 的内存和存储空间 💾
-        draft: false
-        prerelease: false     
-
-    - name: Upload firmware for release
-      uses: csexton/release-asset-action@master
-      continue-on-error: true
-      if: env.REPO_TOKEN
-      with:
-        pattern: "${{ env.FIRMWARE }}/*"
-        github-token: ${{ secrets.REPO_TOKEN }}
-        release-url: ${{ steps.create_release.outputs.upload_url }}
+        body_path: release.txt
+        
           
 #     - name: WeChat notification
 #       run: |
