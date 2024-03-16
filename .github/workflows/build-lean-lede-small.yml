@@ -148,7 +148,7 @@ jobs:
       with:
         files: "${{ env.FIRMWARE }}/*"
         name: ${{ env.date2 }} ${{matrix.target}}
-        tag_name: ${{ env.date }}_${{matrix.target}}
+        tag_name: ${{ env.date }}_x86_small
         body_path: release.txt
        
 #     - name: WeChat notification
