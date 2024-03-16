@@ -128,33 +128,30 @@ jobs:
         weturl=$(echo $weturl | grep -o -E "https[^ ]*")
         echo "WETURL=$weturl" >> $GITHUB_ENV
         echo "wet Download Link: $weturl  🚀"
-    
-    - name: Create release
-      id: create_release
-      uses: actions/create-release@master
-      continue-on-error: true
-      if: env.REPO_TOKEN
+
+
+    - name: Generate release tag
+      id: tag
+      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      run: |
+        echo -e "墙内外加速下载 🎈:\n" >> release.txt
+        echo -e "[kenzo] (https://${{ secrets.REMOTE_HOST }}/op/firmware/${{matrix.target}})\n" >> release.txt
+        touch release.txt
+        [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ env.COWURL }})" >> release.txt
+        [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ env.WETURL }})" >> release.txt
+        echo "status=success" >> $GITHUB_OUTPUT
+
+    - name: Upload firmware to release
+      uses: softprops/action-gh-release@master
+      if: steps.tag.outputs.status == 'success' && !cancelled()
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
-        tag_name: ${{ env.date }}_x86_64_精简版本
-        release_name: ${{ env.date2 }} _x86_64_精简版本
-        body: |
-            墙内加速下载🔥:
-            奶牛快传: ${{ env.COWURL }} 🚀
-            WeTransfer: ${{ env.WETURL }} 🚀
-            请分配不低于500m 的内存和存储空间 💾
-        draft: false
-        prerelease: false     
-
-    - name: Upload firmware for release
-      uses: csexton/release-asset-action@master
-      continue-on-error: true
-      if: env.REPO_TOKEN
-      with:
-        pattern: "${{ env.FIRMWARE }}/*"
-        github-token: ${{ secrets.REPO_TOKEN }}
-        release-url: ${{ steps.create_release.outputs.upload_url }}
+        files: "${{ env.FIRMWARE }}/*"
+        name: ${{ env.date2 }} ${{matrix.target}}
+        tag_name: ${{ env.date }}_${{matrix.target}}
+        body_path: release.txt
+       
 #     - name: WeChat notification
 #       run: |
 #         [ ${{ env.status }} == 'success' ] && curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=🎉OpenWrt_${{ env.date3 }}_x86_64编译完成😋 || curl https://sc.ftqq.com/SCU31388T7e7d32f3d89ef0033572ec592da40a6f5b84e595389ee.send?text=❌OpenWrt_${{ env.date3 }}__x86_64编译失败😂
