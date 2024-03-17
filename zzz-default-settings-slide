@@ -1,7 +1,6 @@
 #!/bin/sh
 
 uci set luci.main.lang=zh_cn
-uci set luci.main.mediaurlbase=/luci-static/argon
 uci commit luci
 
 uci set system.@system[0].timezone=CST-8
@@ -13,6 +12,8 @@ uci commit fstab
 
 #set newtwork	
 uci set network.lan.ipaddr="192.168.100.2"
+uci set network.lan.gateway="192.168.100.1"
+uci set network.lan.dns="223.5.5.5"
 uci set network.wan.proto=dhcp
 uci set network.wan.ifname=eth5
 uci set network.wan6.ifname=eth5
