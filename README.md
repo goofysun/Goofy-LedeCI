@@ -1,9 +1,5 @@
 
 
-+ ![Build Lean small](https://github.com/goofysun/Goofy-LedeCI/workflows/Build%20Lean%20small/badge.svg) 精简版自动编译情况
-+ ![Build-Lean-lede](https://github.com/goofysun/Goofy-LedeCI/workflows/Build-Lean-lede/badge.svg)       全量版自动编译情况
-+ ![Build Lean side](https://github.com/goofysun/Goofy-LedeCI/workflows/Build%20Lean%20side/badge.svg) 旁路由精简版
-
 ## 此编译源码基于 lean大 版本 https://github.com/coolsnowwolf 
 
 ## 全量包 加入 Lienol 和  kenzok8俩位大神维护的软件源
