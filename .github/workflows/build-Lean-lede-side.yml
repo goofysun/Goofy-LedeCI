@@ -23,6 +23,7 @@ on:
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   TZ: Asia/Shanghai
+  UPLOAD_RELEASE: true
 
 jobs:
   x86:
