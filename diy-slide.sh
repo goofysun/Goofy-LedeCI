@@ -9,6 +9,7 @@ rm -rf qBittorrent
 rm -rf luci-app-qbittorrent
 rm -rf qt5
 rm -rf rblibtorrent
+rm -rf luci-theme-argon
 cd ../../
 
 rm -rf package/custom
@@ -16,14 +17,12 @@ mkdir -p package/custom
 #rm -rf package/lean/baidupcs-web
 cd package/custom
 
-
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
 
 git clone https://github.com/kenzok8/small
 git clone https://github.com/kenzok8/openwrt-packages
-git clone https://github.com/Lienol/openwrt-package
 
-git clone https://github.com/destan19/OpenAppFilter --depth 1
-
+rm -rf ./openwrt-packages/luci-theme-argon
 #这个有新图标的主题，容易挂
 cd ../../
 
