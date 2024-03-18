@@ -9,6 +9,7 @@ rm -rf qBittorrent
 rm -rf luci-app-qbittorrent
 rm -rf qt5
 rm -rf rblibtorrent
+rm -rf luci-theme-argon
 cd ../../
 
 
@@ -39,7 +40,12 @@ git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
 git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 1
 
 
-git clone  https://github.com/kenzok8/openwrt-packages  --depth 1
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
+
+git clone https://github.com/kenzok8/small
+git clone https://github.com/kenzok8/openwrt-packages
+
+rm -rf ./openwrt-packages/luci-theme-argon
 
 #这个有新图标的主题，容易挂
 cd ../../
