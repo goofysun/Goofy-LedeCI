@@ -42,8 +42,9 @@ git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 
 
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
 
-git clone https://github.com/kenzok8/small
-git clone https://github.com/kenzok8/openwrt-packages
+git clone https://github.com/kenzok8/small --depth 1
+git clone https://github.com/kenzok8/openwrt-packages --depth 1
+git clone https://github.com/max0y/luci-app-cd8021x.git --depth 1
 
 rm -rf ./openwrt-packages/luci-theme-argon
 
