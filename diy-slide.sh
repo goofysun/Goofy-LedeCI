@@ -17,6 +17,12 @@ mkdir -p package/custom
 #rm -rf package/lean/baidupcs-web
 cd package/custom
 
+#VSSR
+git clone https://github.com/jerrykuku/lua-maxminddb.git --depth 1
+git clone https://github.com/fw876/helloworld --depth 1
+git clone https://github.com/xiaorouji/openwrt-passwall --depth 1
+git clone https://github.com/ipenwrt/luci-app-vssr  --depth 1
+
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
 
 git clone https://github.com/kenzok8/small
