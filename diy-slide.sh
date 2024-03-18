@@ -21,7 +21,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-
 
 git clone https://github.com/kenzok8/small
 git clone https://github.com/kenzok8/openwrt-packages
-
+rm -rf ./small/v2ray-plugin
 rm -rf ./openwrt-packages/luci-theme-argon
 #这个有新图标的主题，容易挂
 cd ../../
