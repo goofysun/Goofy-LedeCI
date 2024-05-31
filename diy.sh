@@ -1,32 +1,45 @@
 #!/bin/bash
-# 本脚本工作目录必须是git仓库的主目录
+# 本脚本工作目录必须是git仓库的主目录 
+./scripts/feeds install -a
 
-# Add Some Package
-#sed -i 's/5.4/4.19/g' ./target/linux/x86/Makefile
-#rm -rf package/custom
-#mkdir -p package/custom
-#rm -rf package/lean/baidupcs-web
-#cd package/custom
-#git clone https://github.com/kenzok8/small
-#git clone https://github.com/kenzok8/openwrt-packages
-#git clone https://github.com/Lienol/openwrt-package
+rm -rf package/custom
+mkdir -p package/custom
+cd package/custom
+
+#VSSR
+git clone https://github.com/jerrykuku/lua-maxminddb.git --depth 1
+git clone https://github.com/fw876/helloworld --depth 1
+git clone https://github.com/xiaorouji/openwrt-passwall --depth 1
+git clone https://github.com/ipenwrt/luci-app-vssr  --depth 1
+
+#bandwidth
+git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
+
+#app filter
+git clone https://github.com/destan19/OpenAppFilter --depth 1
+
+#speed limit
+git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
+git clone --depth=1 https://github.com/loryncien/luci-app-speedlimit
+
+#poweroff
+git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
+
+#netspeedtest
+git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 1
 
 
-#git clone https://github.com/tty228/luci-app-serverchan
-#git clone https://github.com/jerrykuku/luci-theme-argon -b 18.06
-#git clone https://github.com/lisaac/luci-app-dockerman
-#git clone https://github.com/goofysun/luci-app-koolproxyR
-#git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
 
+git clone https://github.com/kenzok8/small --depth 1
+git clone https://github.com/kenzok8/openwrt-packages --depth 1
+git clone https://github.com/max0y/luci-app-cd8021x.git --depth 1
 
-#cd ../../
-# Modify default IP
+rm -rf ./openwrt-packages/luci-theme-argon
 
-#sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
-#sed -i 's/192.168/10.0/g' package/base-files/files/bin/config_generate
+#这个有新图标的主题，容易挂
+cd ../../
 
 # Add some default settings
-
-#\cp -rf ../lede/zzz-default-settings package/lean/default-settings/files/zzz-default-settings
 cp -rf ../zzz-default-settings  package/lean/default-settings/files/zzz-default-settings
-./scripts/feeds install -a
+rm package/feeds/packages/adguardhome -rf
