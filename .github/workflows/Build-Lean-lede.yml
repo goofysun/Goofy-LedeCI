@@ -49,11 +49,12 @@ jobs:
         echo "date2=$(date +'%m/%d %Y')" >> $GITHUB_ENV
         echo "date3=$(date +'%m.%d')" >> $GITHUB_ENV
          
+
     - name: Upload entire bin directory
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: ${{ env.date3 }}_LEDE-x86_64-bin-dictionary
+        name: ${{ env.date3 }}_all_LEDE-x86_64-bin-dictionary
         path: lede/bin
         
     - name: Setup Upload dictionary
@@ -67,8 +68,9 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: ${{ env.date3 }}_x86_64
+        name: ${{ env.date3 }}_x86_64_all
         path: ${{ env.FIRMWARE }}
+    
     
     - name: Upload firmware to cowtransfer
       if: always()
@@ -83,7 +85,8 @@ jobs:
         weturl=$(echo $weturl | grep -o -E "https[^ ]*")
         echo "WETURL=$weturl" >> $GITHUB_ENV
         echo "wet Download Link: $weturl  🚀"
-    
+
+
     - name: Generate release tag
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
@@ -100,9 +103,10 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
         files: "${{ env.FIRMWARE }}/*"
-        name: ${{ env.date2 }} ${{matrix.target}}
-        tag_name: ${{ env.date }}_x86_64_Lean原版
+        name: ${{ env.date2 }} ${{matrix.target}}_x86_all
+        tag_name: ${{ env.date }}_x86_all
         body_path: release.txt
+       
     
     
 #     - name: WeChat notification
