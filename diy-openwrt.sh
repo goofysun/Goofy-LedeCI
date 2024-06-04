@@ -28,3 +28,4 @@ sed -i 's/192.168.100.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168/10.0/g' package/base-files/files/bin/config_generate
 rm package/custom/openwrt-packages/adguardhome -rf
 rm package/custom/small/xray-core  -rf
+rm package/custom/small/xray-plugin  -rf
