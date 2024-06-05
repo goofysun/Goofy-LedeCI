@@ -5,12 +5,12 @@
 rm -rf package/custom
 mkdir -p package/custom
 cd package/custom
-git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
-git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
+#git clone --depth=1 https://github.com/Huangjoe123/luci-app-eqos
+#git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git --depth 1
 
-git clone https://github.com/kenzok8/small --depth 1
-git clone https://github.com/kenzok8/openwrt-packages --depth 1
-git clone https://github.com/max0y/luci-app-cd8021x.git --depth 1
+#git clone https://github.com/kenzok8/small --depth 1
+#git clone https://github.com/kenzok8/openwrt-packages --depth 1
+#git clone https://github.com/max0y/luci-app-cd8021x.git --depth 1
 
 
 cd ../../
@@ -21,11 +21,11 @@ cd ../../
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-openvpn-server/Makefile
+#sed -i 's#../../#$(TOPDIR)/feeds/luci/#g' package/custom/luci-app-openvpn-server/Makefile
 
 # Modify default IP
 sed -i 's/192.168.100.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168/10.0/g' package/base-files/files/bin/config_generate
-rm package/custom/openwrt-packages/adguardhome -rf
-rm package/custom/small/xray-core  -rf
-rm package/custom/small/xray-plugin  -rf
+#rm package/custom/openwrt-packages/adguardhome -rf
+#rm package/custom/small/xray-core  -rf
+#rm package/custom/small/xray-plugin  -rf
