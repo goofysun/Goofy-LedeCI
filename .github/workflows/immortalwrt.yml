@@ -110,13 +110,13 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: ${{ env.date3 }}_x86_64_small
+        name: ${{ env.date3 }}_x86_64_immortalwrt
         path: ${{ env.FIRMWARE }}
     
     
     - name: Upload firmware to cowtransfer
       if: always()
-      continue-on-error: true
+      continue-on-error: false
       run: |
         curl -fsSL git.io/file-transfer | sh
         cowurl=$(./transfer cow --block 2621440 -s --no-progress ${FIRMWARE})
