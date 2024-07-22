@@ -16,7 +16,6 @@ on:
     paths:
       - '.github/workflows/deleteReleases.yml'
       
-      
 env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   TZ: Asia/Shanghai
