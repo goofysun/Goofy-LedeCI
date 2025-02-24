@@ -33,7 +33,7 @@ git clone https://github.com/esirplayground/luci-app-poweroff --depth 1
 git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 1
 
 
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
+git clone  https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
 
 git clone https://github.com/kenzok8/small --depth 1
 git clone https://github.com/kenzok8/openwrt-packages --depth 1
