@@ -27,7 +27,7 @@ env:
 
 jobs:
   x86:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:    
     - name: Space cleanup and Initialization environment
       env:
