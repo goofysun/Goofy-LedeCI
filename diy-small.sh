@@ -1,5 +1,7 @@
 
 #!/bin/bash
+sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+./scripts/feeds update -a
 # 本脚本工作目录必须是git仓库的主目录 
 ./scripts/feeds install -a
 cd package/lean/
@@ -42,8 +44,8 @@ git clone https://github.com/sirpdboy/netspeedtest package/netspeedtest --depth 
 
 git clone https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
 
-git clone https://github.com/kenzok8/small --depth 1
-git clone https://github.com/kenzok8/openwrt-packages --depth 1
+#git clone https://github.com/kenzok8/small --depth 1
+#git clone https://github.com/kenzok8/openwrt-packages --depth 1
 git clone https://github.com/max0y/luci-app-cd8021x.git --depth 1
 
 rm -rf ./openwrt-packages/luci-theme-argon
