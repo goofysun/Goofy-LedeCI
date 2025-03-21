@@ -1,7 +1,6 @@
 
 #!/bin/bash
 sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
-./scripts/feeds update -a
 # 本脚本工作目录必须是git仓库的主目录 
 ./scripts/feeds install -a
 cd package/lean/
