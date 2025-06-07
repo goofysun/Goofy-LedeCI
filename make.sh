@@ -19,7 +19,7 @@ if [ -d "lede" ];then
   git reset --hard
   git pull
 else
-  git clone https://github.com/coolsnowwolf/lede
+  git clone https://github.com/coolsnowwolf/lede -depth
   cd lede
 fi
 ./scripts/feeds update -a
