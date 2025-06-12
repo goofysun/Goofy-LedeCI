@@ -23,10 +23,10 @@ git clone https://github.com/fw876/helloworld --depth 1
 git clone https://github.com/xiaorouji/openwrt-passwall --depth 1
 git clone https://github.com/ipenwrt/luci-app-vssr  --depth 1
 
-git clone https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon --depth 1
 
-git clone https://github.com/kenzok8/small
-git clone https://github.com/kenzok8/openwrt-packages
+git clone https://github.com/kenzok8/small --depth 1
+git clone https://github.com/kenzok8/openwrt-packages --depth 1
 rm -rf ./small/v2ray-plugin
 rm -rf ./openwrt-packages/luci-theme-argon
 #这个有新图标的主题，容易挂
