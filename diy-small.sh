@@ -21,7 +21,8 @@ cd package/custom
 #VSSR
 git clone https://github.com/jerrykuku/lua-maxminddb.git --depth 1
 git clone https://github.com/fw876/helloworld --depth 1
-git clone https://github.com/xiaorouji/openwrt-passwall --depth 1
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages --depth 1
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall --depth 1
 git clone https://github.com/ipenwrt/luci-app-vssr  --depth 1
 
 #bandwidth
